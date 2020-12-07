@@ -1,2 +1,2896 @@
-var app=function(){"use strict";function t(){}function e(t){return t()}function n(){return Object.create(null)}function i(t){t.forEach(e)}function r(t){return"function"==typeof t}function s(t,e){return t!=t?e==e:t!==e||t&&"object"==typeof t||"function"==typeof t}function l(e,n,i){e.$$.on_destroy.push(function(e,...n){if(null==e)return t;const i=e.subscribe(...n);return i.unsubscribe?()=>i.unsubscribe():i}(n,i))}function o(t,e,n=e){return t.set(n),e}function a(t,e){t.appendChild(e)}function u(t,e,n){t.insertBefore(e,n||null)}function c(t){t.parentNode.removeChild(t)}function h(t,e){for(let n=0;n<t.length;n+=1)t[n]&&t[n].d(e)}function f(t){return document.createElement(t)}function d(t){return document.createElementNS("http://www.w3.org/2000/svg",t)}function p(t){return document.createTextNode(t)}function g(){return p(" ")}function m(){return p("")}function w(t,e,n,i){return t.addEventListener(e,n,i),()=>t.removeEventListener(e,n,i)}function v(t,e,n){null==n?t.removeAttribute(e):t.getAttribute(e)!==n&&t.setAttribute(e,n)}function x(t){return""===t?void 0:+t}function y(t,e){e=""+e,t.wholeText!==e&&(t.data=e)}function b(t,e){t.value=null==e?"":e}function $(t,e,n,i){t.style.setProperty(e,n,i?"important":"")}let _;function q(t){_=t}const E=[],A=[],R=[],k=[],H=Promise.resolve();let S=!1;function j(t){R.push(t)}let W=!1;const O=new Set;function T(){if(!W){W=!0;do{for(let t=0;t<E.length;t+=1){const e=E[t];q(e),C(e.$$)}for(E.length=0;A.length;)A.pop()();for(let t=0;t<R.length;t+=1){const e=R[t];O.has(e)||(O.add(e),e())}R.length=0}while(E.length);for(;k.length;)k.pop()();S=!1,W=!1,O.clear()}}function C(t){if(null!==t.fragment){t.update(),i(t.before_update);const e=t.dirty;t.dirty=[-1],t.fragment&&t.fragment.p(t.ctx,e),t.after_update.forEach(j)}}const L=new Set;let M;function P(t,e){t&&t.i&&(L.delete(t),t.i(e))}function B(t,e,n,i){if(t&&t.o){if(L.has(t))return;L.add(t),M.c.push((()=>{L.delete(t),i&&(n&&t.d(1),i())})),t.o(e)}}function N(t){t&&t.c()}function I(t,n,s){const{fragment:l,on_mount:o,on_destroy:a,after_update:u}=t.$$;l&&l.m(n,s),j((()=>{const n=o.map(e).filter(r);a?a.push(...n):i(n),t.$$.on_mount=[]})),u.forEach(j)}function U(t,e){const n=t.$$;null!==n.fragment&&(i(n.on_destroy),n.fragment&&n.fragment.d(e),n.on_destroy=n.fragment=null,n.ctx=[])}function F(t,e){-1===t.$$.dirty[0]&&(E.push(t),S||(S=!0,H.then(T)),t.$$.dirty.fill(0)),t.$$.dirty[e/31|0]|=1<<e%31}function D(e,r,s,l,o,a,u=[-1]){const h=_;q(e);const f=r.props||{},d=e.$$={fragment:null,ctx:null,props:a,update:t,not_equal:o,bound:n(),on_mount:[],on_destroy:[],before_update:[],after_update:[],context:new Map(h?h.$$.context:[]),callbacks:n(),dirty:u,skip_bound:!1};let p=!1;if(d.ctx=s?s(e,f,((t,n,...i)=>{const r=i.length?i[0]:n;return d.ctx&&o(d.ctx[t],d.ctx[t]=r)&&(!d.skip_bound&&d.bound[t]&&d.bound[t](r),p&&F(e,t)),n})):[],d.update(),p=!0,i(d.before_update),d.fragment=!!l&&l(d.ctx),r.target){if(r.hydrate){const t=function(t){return Array.from(t.childNodes)}(r.target);d.fragment&&d.fragment.l(t),t.forEach(c)}else d.fragment&&d.fragment.c();r.intro&&P(e.$$.fragment),I(e,r.target,r.anchor),T()}q(h)}class z{$destroy(){U(this,1),this.$destroy=t}$on(t,e){const n=this.$$.callbacks[t]||(this.$$.callbacks[t]=[]);return n.push(e),()=>{const t=n.indexOf(e);-1!==t&&n.splice(t,1)}}$set(t){var e;this.$$set&&(e=t,0!==Object.keys(e).length)&&(this.$$.skip_bound=!0,this.$$set(t),this.$$.skip_bound=!1)}}function G(t){return isNaN(t)?t.includes("/")&&!t.includes(".")?t.split(" ").filter((t=>""!==t)).reduce(((t,e)=>{if(e.includes("/")){let n=e.split("/").filter((t=>""!==t));return t+parseFloat(n[0]/n[1])}return t+parseFloat(e)}),0):t:parseFloat(t)}let J=.375,K=0,V=[],X={width:49,height:97,margins:.25,max_width:()=>X.width-2*X.margins+J,max_height:()=>X.height-2*X.margins+J};function Y(t,e=1,n=!1,i=J,r=K,s=X){V=[];const l=new nt(function(t,e=","){for(var n=new RegExp("(\\"+e+'|\\r?\\n|\\r|^)(?:"([^"]*(?:""[^"]*)*)"|([^"\\'+e+"\\r\\n]*))","gi"),i=[[]],r=null;r=n.exec(t);){var s=r[1];if(s.length&&s!=e&&i.push([]),r[2])var l=r[2].replace(new RegExp('""',"g"),'"');else l=r[3];/\d/.test(l)&&(l=G(l)),i[i.length-1].push(l)}return i.filter((t=>t.filter((t=>""!==t)).length))}(t).slice(e).flatMap((t=>function([t,e,n,i]){let r=1,s=[];for(;e>=r;)s.push([`${t} (${r}/${e})`,parseFloat(n),parseFloat(i)]),r++;return s}(t).map((t=>new Z(t)))))).flat().filterTooBig();function o(t){let e=new nt(t.widest().place()),n=e[0].width;for(;t.fitsColumn(e);){let i=new nt(t.fitsColumn(e).place());for(;t.fitsRow(i,n);)i.push(t.fitsRow(i,n).place());1===i.length?e.push(i[0]):e.push(i)}return e.ascendingWidth()}function a(t){let e=new nt(t.widest().place());for(;t.fitsSheet(e);)e.push(t.fitsSheet(e).place());return e}function u(t,e){let n=X.margins+X.width*e,i=X.margins,r=new nt;t.forEach(((e,s)=>{0===s?r.push(n):r.push(r.last()+t[s-1].width);let l=new nt;e.group.forEach(((t,e,n)=>{0===e?l.push(i):n[e-1]instanceof nt?l.push(l.last()+n[e-1].filledHeight()):l.push(l.last()+n[e-1].height),t instanceof Z?(t.x0=r[s],t.y0=l[e]):t.forEach(((n,i)=>{n.x0=0===i?r[s]:t[i-1].x0+t[i-1].width,n.y0=l[e]}))}))}))}return J=i,K=r,X.width=s.width,X.height=s.height,X.margins=s.margins,[l,function(t){let e=function(t){let e=new nt;for(;t.notPlaced().length>0;){let n=o(t);e.push(new tt(n.columnWidth(),n.columnHeight(),n.columnArea(),n))}return e}(t),n=new nt;for(;e.notPlaced().length>0;){let t=a(e);u(t,n.length),n.push(new et(t.filledWidth(),t.filledHeight(),t.filledArea(),t.map((t=>t.group)).flatten(2),t,n.length+1))}return n}(l),V]}class Q{constructor(){this.placed=!1}place(){return this.placed=!0,this}}class Z extends Q{constructor([t,e,n]){super(),this.id=t,this.width=e+J+K,this.height=n+J+K,this.area=this.height*this.width,this.x0=0,this.y0=0}}class tt extends Q{constructor(t,e,n,i){super(),this.width=t,this.height=e,this.area=n,this.group=i}}class et extends tt{constructor(t,e,n,i,r,s){super(t,e,n,i),this.columns=r,this.sheet_width=X.width,this.sheet_height=X.height,this.sheet_area=X.width*X.height,this.waste_area=this.sheet_area-this.area,this.waste_ratio=1-this.area/this.sheet_area,this.id="Sheet "+s,delete this.placed}}class nt extends Array{first(){return this[0]}last(){return this[this.length-1]}flatten(t=1){let e=this;for(;t--;)e=e.flat();return e}shuffle(){return this.length<3?this:new nt(...this.slice(1),this.first())}ascendingWidth(){return new nt(...this).sort(((t,e)=>e.width!=t.width?e.width-t.width:e.height-t.height))}ascendingHeight(){return new nt(...this).sort(((t,e)=>e.height!=t.height?e.height-t.height:e.width-t.width))}filterTooBig(){return this.map((t=>t.width>X.max_width()||t.height>X.max_height()?(V.push(`Panel ${t.id} is too big`),!1):t)).filter((t=>t))}notPlaced(){return this.filter((t=>!t.placed))}widest(){return this.notPlaced().ascendingWidth().first()}narrowest(){return this.notPlaced().ascendingWidth().last()}tallest(){return this.notPlaced().ascendingHeight().first()}shortest(){return this.notPlaced().ascendingHeight().last()}biggest(){return this.sort(((t,e)=>e.area-t.area)).notPlaced().first()}totalWidth(){return this.reduce(((t,e)=>e instanceof nt?t+e.ascendingWidth().first().width:t+e.width),0)}totalHeight(){return this.reduce(((t,e)=>e instanceof nt?t+e.ascendingHeight().first().height:t+e.height),0)}totalArea(){return this.reduce(((t,e)=>t+e.area),0)}columnWidth(){return this.flat().ascendingWidth().first().width}columnHeight(){return this.totalHeight()}columnArea(){return this.flat().totalArea()}filledHeight(){return this.ascendingHeight().first().height}filledWidth(){return this.totalWidth()}filledArea(){return this.flat().totalArea()}remainingWidth(t){return t-this.totalWidth()}remainingHeight(t){return t-this.totalHeight()}fitsColumn(t,e=X.height){return this.notPlaced().filter((e=>e.width<=t[0].width)).filter((n=>n.height<t.remainingHeight(e))).widest()}fitsRow(t,e){return this.notPlaced().filter((e=>e.height<=t[0].height)).filter((n=>n.width<t.remainingWidth(e))).widest()}fitsSheet(t,e=X.width){return this.notPlaced().filter((n=>n.width<t.remainingWidth(e))).widest()}}const it=[];const rt=(e,n)=>{const i=t=>JSON.stringify(t,null,2),r=JSON.parse;null===localStorage.getItem(e)&&localStorage.setItem(e,i(n));const l=r(localStorage.getItem(e)),{subscribe:o,set:a,update:u}=function(e,n=t){let i;const r=[];function l(t){if(s(e,t)&&(e=t,i)){const t=!it.length;for(let t=0;t<r.length;t+=1){const n=r[t];n[1](),it.push(n,e)}if(t){for(let t=0;t<it.length;t+=2)it[t][0](it[t+1]);it.length=0}}}return{set:l,update:function(t){l(t(e))},subscribe:function(s,o=t){const a=[s,o];return r.push(a),1===r.length&&(i=n(l)||t),s(e),()=>{const t=r.indexOf(a);-1!==t&&r.splice(t,1),0===r.length&&(i(),i=null)}}}}(l);return{subscribe:o,set:t=>(localStorage.setItem(e,i(t)),a(t)),update:u}},st=rt("panels",[]),lt=rt("sheets",[]),ot=rt("file-info",{});var at="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:{};var ut,ct;(function(t,e){!function(){function e(t,e){return void 0===e?e={autoBom:!1}:"object"!=typeof e&&(console.warn("Deprecated: Expected third argument to be a object"),e={autoBom:!e}),e.autoBom&&/^\s*(?:text\/\S*|application\/xml|\S*\/\S*\+xml)\s*;.*charset\s*=\s*utf-8/i.test(t.type)?new Blob(["\ufeff",t],{type:t.type}):t}function n(t,e,n){var i=new XMLHttpRequest;i.open("GET",t),i.responseType="blob",i.onload=function(){o(i.response,e,n)},i.onerror=function(){console.error("could not download file")},i.send()}function i(t){var e=new XMLHttpRequest;e.open("HEAD",t,!1);try{e.send()}catch(t){}return 200<=e.status&&299>=e.status}function r(t){try{t.dispatchEvent(new MouseEvent("click"))}catch(n){var e=document.createEvent("MouseEvents");e.initMouseEvent("click",!0,!0,window,0,0,0,80,20,!1,!1,!1,!1,0,null),t.dispatchEvent(e)}}var s="object"==typeof window&&window.window===window?window:"object"==typeof self&&self.self===self?self:"object"==typeof at&&at.global===at?at:void 0,l=s.navigator&&/Macintosh/.test(navigator.userAgent)&&/AppleWebKit/.test(navigator.userAgent)&&!/Safari/.test(navigator.userAgent),o=s.saveAs||("object"!=typeof window||window!==s?function(){}:"download"in HTMLAnchorElement.prototype&&!l?function(t,e,l){var o=s.URL||s.webkitURL,a=document.createElement("a");e=e||t.name||"download",a.download=e,a.rel="noopener","string"==typeof t?(a.href=t,a.origin===location.origin?r(a):i(a.href)?n(t,e,l):r(a,a.target="_blank")):(a.href=o.createObjectURL(t),setTimeout((function(){o.revokeObjectURL(a.href)}),4e4),setTimeout((function(){r(a)}),0))}:"msSaveOrOpenBlob"in navigator?function(t,s,l){if(s=s||t.name||"download","string"!=typeof t)navigator.msSaveOrOpenBlob(e(t,l),s);else if(i(t))n(t,s,l);else{var o=document.createElement("a");o.href=t,o.target="_blank",setTimeout((function(){r(o)}))}}:function(t,e,i,r){if((r=r||open("","_blank"))&&(r.document.title=r.document.body.innerText="downloading..."),"string"==typeof t)return n(t,e,i);var o="application/octet-stream"===t.type,a=/constructor/i.test(s.HTMLElement)||s.safari,u=/CriOS\/[\d]+/.test(navigator.userAgent);if((u||o&&a||l)&&"undefined"!=typeof FileReader){var c=new FileReader;c.onloadend=function(){var t=c.result;t=u?t:t.replace(/^data:[^;]*;/,"data:attachment/file;"),r?r.location.href=t:location=t,r=null},c.readAsDataURL(t)}else{var h=s.URL||s.webkitURL,f=h.createObjectURL(t);r?r.location=f:location.href=f,r=null,setTimeout((function(){h.revokeObjectURL(f)}),4e4)}});s.saveAs=o.saveAs=o,t.exports=o}()})(ct={path:ut,exports:{},require:function(t,e){return function(){throw new Error("Dynamic requires are not currently supported by @rollup/plugin-commonjs")}(null==e&&ct.path)}},ct.exports),ct.exports;function ht(e){let n,i,r;return{c(){n=f("h1"),n.textContent="💩",v(n,"class","svelte-118u7vq")},m(t,s){u(t,n,s),i||(r=w(n,"mouseover",e[8]),i=!0)},p:t,d(t){t&&c(n),i=!1,r()}}}function ft(e){let n,i;return{c(){n=f("img"),n.src!==(i="./favicon.png")&&v(n,"src","./favicon.png"),v(n,"alt","open csv file"),v(n,"class","svelte-118u7vq")},m(t,e){u(t,n,e)},p:t,d(t){t&&c(n)}}}function dt(e){let n,r,s,l,o,h,d,p,m,y,$,_,q,E,A,R,k,H,S,j,W,O,T,C,L,M,P,B,N,I,U,F,D,z,G;function J(t,e){return t[1]?ht:ft}let K=J(e),V=K(e);return{c(){n=f("div"),r=f("input"),s=g(),l=f("label"),V.c(),o=g(),h=f("div"),d=f("h5"),d.textContent="Material W x H",p=g(),m=f("input"),y=g(),$=f("span"),$.textContent="x",_=g(),q=f("input"),E=g(),A=f("div"),R=f("h5"),R.textContent="Margins",k=g(),H=f("input"),S=g(),j=f("div"),W=f("h5"),W.textContent="Kerf",O=g(),T=f("input"),C=g(),L=f("div"),M=f("h5"),M.textContent="Gap",P=g(),B=f("input"),N=g(),I=f("div"),U=f("h5"),U.textContent="Metric",F=g(),D=f("input"),v(r,"class","inputfile svelte-118u7vq"),v(r,"name","file"),v(r,"id","file"),v(r,"type","file"),v(l,"for","file"),v(l,"class","svelte-118u7vq"),v(n,"class","upload-wrapper svelte-118u7vq"),v(d,"class","svelte-118u7vq"),v(m,"class","input svelte-118u7vq"),v(m,"type","number"),v($,"class","svelte-118u7vq"),v(q,"class","input svelte-118u7vq"),v(q,"type","number"),v(h,"class","input-wrapper svelte-118u7vq"),v(R,"class","svelte-118u7vq"),v(H,"class","input svelte-118u7vq"),v(H,"type","number"),v(H,"step","0.005"),v(A,"class","input-wrapper svelte-118u7vq"),v(W,"class","svelte-118u7vq"),v(T,"class","input svelte-118u7vq"),v(T,"type","number"),v(T,"step","0.005"),v(j,"class","input-wrapper svelte-118u7vq"),v(M,"class","svelte-118u7vq"),v(B,"class","input svelte-118u7vq"),v(B,"type","number"),v(B,"step","0.005"),v(L,"class","input-wrapper svelte-118u7vq"),v(U,"class","svelte-118u7vq"),v(D,"class","input svelte-118u7vq"),v(D,"type","checkbox"),v(I,"class","input-wrapper svelte-118u7vq")},m(t,i){u(t,n,i),a(n,r),e[7](r),a(n,s),a(n,l),V.m(l,null),u(t,o,i),u(t,h,i),a(h,d),a(h,p),a(h,m),b(m,e[2].width),a(h,y),a(h,$),a(h,_),a(h,q),b(q,e[2].height),u(t,E,i),u(t,A,i),a(A,R),a(A,k),a(A,H),b(H,e[2].margins),u(t,S,i),u(t,j,i),a(j,W),a(j,O),a(j,T),b(T,e[3]),u(t,C,i),u(t,L,i),a(L,M),a(L,P),a(L,B),b(B,e[4]),u(t,N,i),u(t,I,i),a(I,U),a(I,F),a(I,D),D.checked=e[5],z||(G=[w(r,"change",e[6]),w(m,"input",e[9]),w(q,"input",e[10]),w(H,"input",e[11]),w(T,"input",e[12]),w(B,"input",e[13]),w(D,"change",e[14])],z=!0)},p(t,[e]){K===(K=J(t))&&V?V.p(t,e):(V.d(1),V=K(t),V&&(V.c(),V.m(l,null))),4&e&&x(m.value)!==t[2].width&&b(m,t[2].width),4&e&&x(q.value)!==t[2].height&&b(q,t[2].height),4&e&&x(H.value)!==t[2].margins&&b(H,t[2].margins),8&e&&x(T.value)!==t[3]&&b(T,t[3]),16&e&&x(B.value)!==t[4]&&b(B,t[4]),32&e&&(D.checked=t[5])},i:t,o:t,d(t){t&&c(n),e[7](null),V.d(),t&&c(o),t&&c(h),t&&c(E),t&&c(A),t&&c(S),t&&c(j),t&&c(C),t&&c(L),t&&c(N),t&&c(I),z=!1,i(G)}}}function pt(t,e,n){let i,r,s,a;l(t,ot,(t=>n(15,i=t))),l(t,st,(t=>n(16,r=t))),l(t,lt,(t=>n(17,s=t)));let u,c,h,f,d;return n(1,u=!1),n(2,c={width:49,height:97,margins:.25}),n(3,h=.375),n(4,f=0),n(5,d=!1),[a,u,c,h,f,d,function(){let t=a.files[0],e=new FileReader;o(ot,i.name=t.name.replace(".csv",""),i),e.readAsText(t),t.name.includes(".csv")?e.onload=function(t){let e=Y(t.target.result,4,d,h,f,c);n(1,u=!1),o(st,r=e[0]),o(lt,s=e[1]),o(ot,i.errors=e[2],i)}:n(1,u=!0)},function(t){A[t?"unshift":"push"]((()=>{a=t,n(0,a)}))},()=>n(1,u=!1),function(){c.width=x(this.value),n(2,c)},function(){c.height=x(this.value),n(2,c)},function(){c.margins=x(this.value),n(2,c)},function(){h=x(this.value),n(3,h)},function(){f=x(this.value),n(4,f)},function(){d=this.checked,n(5,d)}]}class gt extends z{constructor(t){super(),D(this,t,pt,dt,s,{})}}function mt(t,e,n){const i=t.slice();return i[14]=e[n],i}function wt(t,e,n){const i=t.slice();return i[17]=e[n],i[19]=n,i}function vt(t){let e,n,i,r,s,l,o,h,d,m,w,x;return{c(){e=f("div"),n=f("h4"),i=p("Panel: "),r=p(t[0]),s=g(),l=f("h4"),o=p("Width: "),h=p(t[1]),d=g(),m=f("h4"),w=p("Height: "),x=p(t[2]),v(n,"class","sizes"),v(l,"class","sizes"),v(m,"class","sizes"),v(e,"class","infocard svelte-1f4wqfu"),$(e,"left",t[5]+"px"),$(e,"top",t[4]+"px")},m(t,c){u(t,e,c),a(e,n),a(n,i),a(n,r),a(e,s),a(e,l),a(l,o),a(l,h),a(e,d),a(e,m),a(m,w),a(m,x)},p(t,n){1&n&&y(r,t[0]),2&n&&y(h,t[1]),4&n&&y(x,t[2]),32&n&&$(e,"left",t[5]+"px"),16&n&&$(e,"top",t[4]+"px")},d(t){t&&c(e)}}}function xt(t){let e,n,i,r,s;return{c(){e=d("rect"),v(e,"class","sheet print svelte-1f4wqfu"),v(e,"id",n=t[17].id),v(e,"x",i=t[19]*t[17].sheet_width+"in"),v(e,"y","0"),v(e,"width",r=t[17].sheet_width+"in"),v(e,"height",s=t[17].sheet_height+"in")},m(t,n){u(t,e,n)},p(t,l){128&l&&n!==(n=t[17].id)&&v(e,"id",n),128&l&&i!==(i=t[19]*t[17].sheet_width+"in")&&v(e,"x",i),128&l&&r!==(r=t[17].sheet_width+"in")&&v(e,"width",r),128&l&&s!==(s=t[17].sheet_height+"in")&&v(e,"height",s)},d(t){t&&c(e)}}}function yt(t){let e,n,i,r,s=t[14].id+"";return{c(){e=d("text"),n=p(s),v(e,"class","idv print svelte-1f4wqfu"),v(e,"x",i=t[14].x0-.25+t[14].width/2+"in"),v(e,"y",r=t[14].y0+1+t[14].height/2+"in")},m(t,i){u(t,e,i),a(e,n)},p(t,l){512&l&&s!==(s=t[14].id+"")&&y(n,s),512&l&&i!==(i=t[14].x0-.25+t[14].width/2+"in")&&v(e,"x",i),512&l&&r!==(r=t[14].y0+1+t[14].height/2+"in")&&v(e,"y",r)},d(t){t&&c(e)}}}function bt(t){let e,n,i,r,s=t[14].id+"";return{c(){e=d("text"),n=p(s),v(e,"class","idh print svelte-1f4wqfu"),v(e,"x",i=t[14].x0+t[14].width/2+"in"),v(e,"y",r=t[14].y0+1+t[14].height/2+"in")},m(t,i){u(t,e,i),a(e,n)},p(t,l){512&l&&s!==(s=t[14].id+"")&&y(n,s),512&l&&i!==(i=t[14].x0+t[14].width/2+"in")&&v(e,"x",i),512&l&&r!==(r=t[14].y0+1+t[14].height/2+"in")&&v(e,"y",r)},d(t){t&&c(e)}}}function $t(t){let e,n,r,s,l,o,a,h,f;function p(t,e){return t[14].width>t[14].height?bt:yt}let g=p(t),x=g(t);return{c(){e=d("rect"),x.c(),a=m(),v(e,"class","panel print svelte-1f4wqfu"),v(e,"id",n=t[14].id),v(e,"x",r=t[14].x0+"in"),v(e,"y",s=t[14].y0+"in"),v(e,"width",l=t[14].width+"in"),v(e,"height",o=t[14].height+"in")},m(n,i){u(n,e,i),x.m(n,i),u(n,a,i),h||(f=[w(e,"mouseover",t[10]),w(e,"mouseleave",t[11])],h=!0)},p(t,i){512&i&&n!==(n=t[14].id)&&v(e,"id",n),512&i&&r!==(r=t[14].x0+"in")&&v(e,"x",r),512&i&&s!==(s=t[14].y0+"in")&&v(e,"y",s),512&i&&l!==(l=t[14].width+"in")&&v(e,"width",l),512&i&&o!==(o=t[14].height+"in")&&v(e,"height",o),g===(g=p(t))&&x?x.p(t,i):(x.d(1),x=g(t),x&&(x.c(),x.m(a.parentNode,a)))},d(t){t&&c(e),x.d(t),t&&c(a),h=!1,i(f)}}}function _t(e){let n,i,r,s,l,o=e[3]&&vt(e),p=e[7],w=[];for(let t=0;t<p.length;t+=1)w[t]=xt(wt(e,p,t));let x=e[9],y=[];for(let t=0;t<x.length;t+=1)y[t]=$t(mt(e,x,t));return{c(){n=f("div"),o&&o.c(),i=g(),r=d("svg");for(let t=0;t<w.length;t+=1)w[t].c();s=m();for(let t=0;t<y.length;t+=1)y[t].c();v(r,"class","print svelte-1f4wqfu"),v(r,"version","1.1"),v(r,"xmlns","http://www.w3.org/2000/svg"),v(r,"xmlns:xlink","http://www.w3.org/1999/xlink"),v(r,"viewBox",l="0 0 "+96*e[6]+" "+96*e[8]),v(r,"preserveAspectRatio","xMidYMid meet"),v(n,"class","viewer svelte-1f4wqfu")},m(t,e){u(t,n,e),o&&o.m(n,null),a(n,i),a(n,r);for(let t=0;t<w.length;t+=1)w[t].m(r,null);a(r,s);for(let t=0;t<y.length;t+=1)y[t].m(r,null)},p(t,[e]){if(t[3]?o?o.p(t,e):(o=vt(t),o.c(),o.m(n,i)):o&&(o.d(1),o=null),128&e){let n;for(p=t[7],n=0;n<p.length;n+=1){const i=wt(t,p,n);w[n]?w[n].p(i,e):(w[n]=xt(i),w[n].c(),w[n].m(r,s))}for(;n<w.length;n+=1)w[n].d(1);w.length=p.length}if(3584&e){let n;for(x=t[9],n=0;n<x.length;n+=1){const i=mt(t,x,n);y[n]?y[n].p(i,e):(y[n]=$t(i),y[n].c(),y[n].m(r,null))}for(;n<y.length;n+=1)y[n].d(1);y.length=x.length}320&e&&l!==(l="0 0 "+96*t[6]+" "+96*t[8])&&v(r,"viewBox",l)},i:t,o:t,d(t){t&&c(n),o&&o.d(),h(w,t),h(y,t)}}}function qt(t,e,n){let i,r;l(t,lt,(t=>n(7,i=t))),l(t,st,(t=>n(9,r=t)));let s,o,a,u,c,h=!1,f=0,d=0;return t.$$.update=()=>{128&t.$$.dirty&&n(6,u=i.length*i[0].sheet_width||61),128&t.$$.dirty&&n(8,c=i.sheet_height||121)},[s,o,a,h,f,d,u,i,c,r,function(){n(3,h=!0);var t=this.getBoundingClientRect();n(4,f=t.bottom+12),n(5,d=t.left+12),n(0,s=this.id),n(1,o=this.width.baseVal.valueAsString),n(2,a=this.height.baseVal.valueAsString)},function(t){n(3,h=!1)}]}class Et extends z{constructor(t){super(),D(this,t,qt,_t,s,{})}}function At(t,e,n){const i=t.slice();return i[2]=e[n],i}function Rt(t,e,n){const i=t.slice();return i[5]=e[n],i[7]=n,i}function kt(t){let e,n,i=t[0].name+"";return{c(){e=f("h2"),n=p(i)},m(t,i){u(t,e,i),a(e,n)},p(t,e){1&e&&i!==(i=t[0].name+"")&&y(n,i)},d(t){t&&c(e)}}}function Ht(t){let e,n,i,r,s,l,o,h,d,m,w,x,b,$,_,q=t[5].id+"",E=parseInt(t[5].area)+"",A=parseInt(t[5].waste_area)+"",R=parseInt(100*t[5].waste_ratio)+"";return{c(){e=f("div"),n=f("h4"),i=p(q),r=g(),s=f("p"),l=p("used area: "),o=p(E),h=g(),d=f("p"),m=p("waste area: "),w=p(A),x=g(),b=f("p"),$=p("waste %: "),_=p(R),v(e,"class","svelte-1h8rjuq")},m(t,c){u(t,e,c),a(e,n),a(n,i),a(e,r),a(e,s),a(s,l),a(s,o),a(e,h),a(e,d),a(d,m),a(d,w),a(e,x),a(e,b),a(b,$),a(b,_)},p(t,e){2&e&&q!==(q=t[5].id+"")&&y(i,q),2&e&&E!==(E=parseInt(t[5].area)+"")&&y(o,E),2&e&&A!==(A=parseInt(t[5].waste_area)+"")&&y(w,A),2&e&&R!==(R=parseInt(100*t[5].waste_ratio)+"")&&y(_,R)},d(t){t&&c(e)}}}function St(t){let e,n,i,r=t[0].errors,s=[];for(let e=0;e<r.length;e+=1)s[e]=jt(At(t,r,e));return{c(){e=f("h5"),e.textContent="ERROR:",n=g();for(let t=0;t<s.length;t+=1)s[t].c();i=m()},m(t,r){u(t,e,r),u(t,n,r);for(let e=0;e<s.length;e+=1)s[e].m(t,r);u(t,i,r)},p(t,e){if(1&e){let n;for(r=t[0].errors,n=0;n<r.length;n+=1){const l=At(t,r,n);s[n]?s[n].p(l,e):(s[n]=jt(l),s[n].c(),s[n].m(i.parentNode,i))}for(;n<s.length;n+=1)s[n].d(1);s.length=r.length}},d(t){t&&c(e),t&&c(n),h(s,t),t&&c(i)}}}function jt(t){let e,n,i=t[2]+"";return{c(){e=f("p"),n=p(i)},m(t,i){u(t,e,i),a(e,n)},p(t,e){1&e&&i!==(i=t[2]+"")&&y(n,i)},d(t){t&&c(e)}}}function Wt(e){let n,i,r,s,l=e[0].name&&kt(e),o=e[1],a=[];for(let t=0;t<o.length;t+=1)a[t]=Ht(Rt(e,o,t));let d=e[0].errors.length&&St(e);return{c(){n=f("div"),l&&l.c(),i=g();for(let t=0;t<a.length;t+=1)a[t].c();r=g(),s=f("div"),d&&d.c(),v(n,"class","svelte-1h8rjuq"),v(s,"class","svelte-1h8rjuq")},m(t,e){u(t,n,e),l&&l.m(n,null),u(t,i,e);for(let n=0;n<a.length;n+=1)a[n].m(t,e);u(t,r,e),u(t,s,e),d&&d.m(s,null)},p(t,[e]){if(t[0].name?l?l.p(t,e):(l=kt(t),l.c(),l.m(n,null)):l&&(l.d(1),l=null),2&e){let n;for(o=t[1],n=0;n<o.length;n+=1){const i=Rt(t,o,n);a[n]?a[n].p(i,e):(a[n]=Ht(i),a[n].c(),a[n].m(r.parentNode,r))}for(;n<a.length;n+=1)a[n].d(1);a.length=o.length}t[0].errors.length?d?d.p(t,e):(d=St(t),d.c(),d.m(s,null)):d&&(d.d(1),d=null)},i:t,o:t,d(t){t&&c(n),l&&l.d(),t&&c(i),h(a,t),t&&c(r),t&&c(s),d&&d.d()}}}function Ot(t,e,n){let i,r;return l(t,ot,(t=>n(0,i=t))),l(t,lt,(t=>n(1,r=t))),[i,r]}class Tt extends z{constructor(t){super(),D(this,t,Ot,Wt,s,{})}}function Ct(t){let e,n,i,r,s;return e=new Et({}),r=new Tt({}),{c(){N(e.$$.fragment),n=g(),i=f("div"),N(r.$$.fragment),v(i,"class","info svelte-j2egch")},m(t,l){I(e,t,l),u(t,n,l),u(t,i,l),I(r,i,null),s=!0},i(t){s||(P(e.$$.fragment,t),P(r.$$.fragment,t),s=!0)},o(t){B(e.$$.fragment,t),B(r.$$.fragment,t),s=!1},d(t){U(e,t),t&&c(n),t&&c(i),U(r)}}}function Lt(t){let e,n,r,s,l;r=new gt({});let o=t[0].length&&Ct();return{c(){e=f("div"),n=f("div"),N(r.$$.fragment),s=g(),o&&o.c(),v(n,"class","import svelte-j2egch"),v(e,"class","container svelte-j2egch")},m(t,i){u(t,e,i),a(e,n),I(r,n,null),a(e,s),o&&o.m(e,null),l=!0},p(t,[n]){t[0].length?o?1&n&&P(o,1):(o=Ct(),o.c(),P(o,1),o.m(e,null)):o&&(M={r:0,c:[],p:M},B(o,1,1,(()=>{o=null})),M.r||i(M.c),M=M.p)},i(t){l||(P(r.$$.fragment,t),P(o),l=!0)},o(t){B(r.$$.fragment,t),B(o),l=!1},d(t){t&&c(e),U(r),o&&o.d()}}}function Mt(t,e,n){let i;return l(t,lt,(t=>n(0,i=t))),[i]}return new class extends z{constructor(t){super(),D(this,t,Mt,Lt,s,{})}}({target:document.body})}();
+
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
+var app = (function () {
+    'use strict';
+
+    function noop() { }
+    function add_location(element, file, line, column, char) {
+        element.__svelte_meta = {
+            loc: { file, line, column, char }
+        };
+    }
+    function run(fn) {
+        return fn();
+    }
+    function blank_object() {
+        return Object.create(null);
+    }
+    function run_all(fns) {
+        fns.forEach(run);
+    }
+    function is_function(thing) {
+        return typeof thing === 'function';
+    }
+    function safe_not_equal(a, b) {
+        return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+    }
+    function is_empty(obj) {
+        return Object.keys(obj).length === 0;
+    }
+    function validate_store(store, name) {
+        if (store != null && typeof store.subscribe !== 'function') {
+            throw new Error(`'${name}' is not a store with a 'subscribe' method`);
+        }
+    }
+    function subscribe(store, ...callbacks) {
+        if (store == null) {
+            return noop;
+        }
+        const unsub = store.subscribe(...callbacks);
+        return unsub.unsubscribe ? () => unsub.unsubscribe() : unsub;
+    }
+    function component_subscribe(component, store, callback) {
+        component.$$.on_destroy.push(subscribe(store, callback));
+    }
+    function set_store_value(store, ret, value = ret) {
+        store.set(value);
+        return ret;
+    }
+
+    function append(target, node) {
+        target.appendChild(node);
+    }
+    function insert(target, node, anchor) {
+        target.insertBefore(node, anchor || null);
+    }
+    function detach(node) {
+        node.parentNode.removeChild(node);
+    }
+    function destroy_each(iterations, detaching) {
+        for (let i = 0; i < iterations.length; i += 1) {
+            if (iterations[i])
+                iterations[i].d(detaching);
+        }
+    }
+    function element(name) {
+        return document.createElement(name);
+    }
+    function svg_element(name) {
+        return document.createElementNS('http://www.w3.org/2000/svg', name);
+    }
+    function text(data) {
+        return document.createTextNode(data);
+    }
+    function space() {
+        return text(' ');
+    }
+    function empty() {
+        return text('');
+    }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
+    function attr(node, attribute, value) {
+        if (value == null)
+            node.removeAttribute(attribute);
+        else if (node.getAttribute(attribute) !== value)
+            node.setAttribute(attribute, value);
+    }
+    function to_number(value) {
+        return value === '' ? undefined : +value;
+    }
+    function children(element) {
+        return Array.from(element.childNodes);
+    }
+    function set_input_value(input, value) {
+        input.value = value == null ? '' : value;
+    }
+    function set_style(node, key, value, important) {
+        node.style.setProperty(key, value, important ? 'important' : '');
+    }
+    function custom_event(type, detail) {
+        const e = document.createEvent('CustomEvent');
+        e.initCustomEvent(type, false, false, detail);
+        return e;
+    }
+
+    let current_component;
+    function set_current_component(component) {
+        current_component = component;
+    }
+    function get_current_component() {
+        if (!current_component)
+            throw new Error(`Function called outside component initialization`);
+        return current_component;
+    }
+    function afterUpdate(fn) {
+        get_current_component().$$.after_update.push(fn);
+    }
+
+    const dirty_components = [];
+    const binding_callbacks = [];
+    const render_callbacks = [];
+    const flush_callbacks = [];
+    const resolved_promise = Promise.resolve();
+    let update_scheduled = false;
+    function schedule_update() {
+        if (!update_scheduled) {
+            update_scheduled = true;
+            resolved_promise.then(flush);
+        }
+    }
+    function add_render_callback(fn) {
+        render_callbacks.push(fn);
+    }
+    let flushing = false;
+    const seen_callbacks = new Set();
+    function flush() {
+        if (flushing)
+            return;
+        flushing = true;
+        do {
+            // first, call beforeUpdate functions
+            // and update components
+            for (let i = 0; i < dirty_components.length; i += 1) {
+                const component = dirty_components[i];
+                set_current_component(component);
+                update(component.$$);
+            }
+            dirty_components.length = 0;
+            while (binding_callbacks.length)
+                binding_callbacks.pop()();
+            // then, once components are updated, call
+            // afterUpdate functions. This may cause
+            // subsequent updates...
+            for (let i = 0; i < render_callbacks.length; i += 1) {
+                const callback = render_callbacks[i];
+                if (!seen_callbacks.has(callback)) {
+                    // ...so guard against infinite loops
+                    seen_callbacks.add(callback);
+                    callback();
+                }
+            }
+            render_callbacks.length = 0;
+        } while (dirty_components.length);
+        while (flush_callbacks.length) {
+            flush_callbacks.pop()();
+        }
+        update_scheduled = false;
+        flushing = false;
+        seen_callbacks.clear();
+    }
+    function update($$) {
+        if ($$.fragment !== null) {
+            $$.update();
+            run_all($$.before_update);
+            const dirty = $$.dirty;
+            $$.dirty = [-1];
+            $$.fragment && $$.fragment.p($$.ctx, dirty);
+            $$.after_update.forEach(add_render_callback);
+        }
+    }
+    const outroing = new Set();
+    let outros;
+    function group_outros() {
+        outros = {
+            r: 0,
+            c: [],
+            p: outros // parent group
+        };
+    }
+    function check_outros() {
+        if (!outros.r) {
+            run_all(outros.c);
+        }
+        outros = outros.p;
+    }
+    function transition_in(block, local) {
+        if (block && block.i) {
+            outroing.delete(block);
+            block.i(local);
+        }
+    }
+    function transition_out(block, local, detach, callback) {
+        if (block && block.o) {
+            if (outroing.has(block))
+                return;
+            outroing.add(block);
+            outros.c.push(() => {
+                outroing.delete(block);
+                if (callback) {
+                    if (detach)
+                        block.d(1);
+                    callback();
+                }
+            });
+            block.o(local);
+        }
+    }
+    function create_component(block) {
+        block && block.c();
+    }
+    function mount_component(component, target, anchor) {
+        const { fragment, on_mount, on_destroy, after_update } = component.$$;
+        fragment && fragment.m(target, anchor);
+        // onMount happens before the initial afterUpdate
+        add_render_callback(() => {
+            const new_on_destroy = on_mount.map(run).filter(is_function);
+            if (on_destroy) {
+                on_destroy.push(...new_on_destroy);
+            }
+            else {
+                // Edge case - component was destroyed immediately,
+                // most likely as a result of a binding initialising
+                run_all(new_on_destroy);
+            }
+            component.$$.on_mount = [];
+        });
+        after_update.forEach(add_render_callback);
+    }
+    function destroy_component(component, detaching) {
+        const $$ = component.$$;
+        if ($$.fragment !== null) {
+            run_all($$.on_destroy);
+            $$.fragment && $$.fragment.d(detaching);
+            // TODO null out other refs, including component.$$ (but need to
+            // preserve final state?)
+            $$.on_destroy = $$.fragment = null;
+            $$.ctx = [];
+        }
+    }
+    function make_dirty(component, i) {
+        if (component.$$.dirty[0] === -1) {
+            dirty_components.push(component);
+            schedule_update();
+            component.$$.dirty.fill(0);
+        }
+        component.$$.dirty[(i / 31) | 0] |= (1 << (i % 31));
+    }
+    function init(component, options, instance, create_fragment, not_equal, props, dirty = [-1]) {
+        const parent_component = current_component;
+        set_current_component(component);
+        const prop_values = options.props || {};
+        const $$ = component.$$ = {
+            fragment: null,
+            ctx: null,
+            // state
+            props,
+            update: noop,
+            not_equal,
+            bound: blank_object(),
+            // lifecycle
+            on_mount: [],
+            on_destroy: [],
+            before_update: [],
+            after_update: [],
+            context: new Map(parent_component ? parent_component.$$.context : []),
+            // everything else
+            callbacks: blank_object(),
+            dirty,
+            skip_bound: false
+        };
+        let ready = false;
+        $$.ctx = instance
+            ? instance(component, prop_values, (i, ret, ...rest) => {
+                const value = rest.length ? rest[0] : ret;
+                if ($$.ctx && not_equal($$.ctx[i], $$.ctx[i] = value)) {
+                    if (!$$.skip_bound && $$.bound[i])
+                        $$.bound[i](value);
+                    if (ready)
+                        make_dirty(component, i);
+                }
+                return ret;
+            })
+            : [];
+        $$.update();
+        ready = true;
+        run_all($$.before_update);
+        // `false` as a special case of no DOM component
+        $$.fragment = create_fragment ? create_fragment($$.ctx) : false;
+        if (options.target) {
+            if (options.hydrate) {
+                const nodes = children(options.target);
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.l(nodes);
+                nodes.forEach(detach);
+            }
+            else {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.c();
+            }
+            if (options.intro)
+                transition_in(component.$$.fragment);
+            mount_component(component, options.target, options.anchor);
+            flush();
+        }
+        set_current_component(parent_component);
+    }
+    class SvelteComponent {
+        $destroy() {
+            destroy_component(this, 1);
+            this.$destroy = noop;
+        }
+        $on(type, callback) {
+            const callbacks = (this.$$.callbacks[type] || (this.$$.callbacks[type] = []));
+            callbacks.push(callback);
+            return () => {
+                const index = callbacks.indexOf(callback);
+                if (index !== -1)
+                    callbacks.splice(index, 1);
+            };
+        }
+        $set($$props) {
+            if (this.$$set && !is_empty($$props)) {
+                this.$$.skip_bound = true;
+                this.$$set($$props);
+                this.$$.skip_bound = false;
+            }
+        }
+    }
+
+    function dispatch_dev(type, detail) {
+        document.dispatchEvent(custom_event(type, Object.assign({ version: '3.24.1' }, detail)));
+    }
+    function append_dev(target, node) {
+        dispatch_dev("SvelteDOMInsert", { target, node });
+        append(target, node);
+    }
+    function insert_dev(target, node, anchor) {
+        dispatch_dev("SvelteDOMInsert", { target, node, anchor });
+        insert(target, node, anchor);
+    }
+    function detach_dev(node) {
+        dispatch_dev("SvelteDOMRemove", { node });
+        detach(node);
+    }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ["capture"] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev("SvelteDOMAddEventListener", { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev("SvelteDOMRemoveEventListener", { node, event, handler, modifiers });
+            dispose();
+        };
+    }
+    function attr_dev(node, attribute, value) {
+        attr(node, attribute, value);
+        if (value == null)
+            dispatch_dev("SvelteDOMRemoveAttribute", { node, attribute });
+        else
+            dispatch_dev("SvelteDOMSetAttribute", { node, attribute, value });
+    }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.wholeText === data)
+            return;
+        dispatch_dev("SvelteDOMSetData", { node: text, data });
+        text.data = data;
+    }
+    function validate_each_argument(arg) {
+        if (typeof arg !== 'string' && !(arg && typeof arg === 'object' && 'length' in arg)) {
+            let msg = '{#each} only iterates over array-like objects.';
+            if (typeof Symbol === 'function' && arg && Symbol.iterator in arg) {
+                msg += ' You can use a spread to convert this iterable into an array.';
+            }
+            throw new Error(msg);
+        }
+    }
+    function validate_slots(name, slot, keys) {
+        for (const slot_key of Object.keys(slot)) {
+            if (!~keys.indexOf(slot_key)) {
+                console.warn(`<${name}> received an unexpected slot "${slot_key}".`);
+            }
+        }
+    }
+    class SvelteComponentDev extends SvelteComponent {
+        constructor(options) {
+            if (!options || (!options.target && !options.$$inline)) {
+                throw new Error(`'target' is a required option`);
+            }
+            super();
+        }
+        $destroy() {
+            super.$destroy();
+            this.$destroy = () => {
+                console.warn(`Component was already destroyed`); // eslint-disable-line no-console
+            };
+        }
+        $capture_state() { }
+        $inject_state() { }
+    }
+
+    function CSVToArray( strData, strDelimiter = "," ) {
+
+        // Create a regular expression to parse the CSV values.
+        var regexPattern = new RegExp( (
+                "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +  // Delimiters.
+                "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +         // Quoted fields.
+                "([^\"\\" + strDelimiter + "\\r\\n]*))"     // Standard fields.
+            ), "gi" );
+
+        // Create an array of arrays to hold csv data.
+        var arrData = [[]];
+
+        // Create an array to hold our individual pattern
+        // matching groups.
+        var arrMatches = null;
+
+        // Keep looping over the regular expression matches
+        // until we can no longer find a match.
+        while (arrMatches = regexPattern.exec( strData )){
+
+            // Get the delimiter that was found.
+            var strMatchedDelimiter = arrMatches[ 1 ];
+
+            // Check to see if the given delimiter has a length
+            // (is not the start of string) and if it matches
+            // field delimiter. If id does not, then we know
+            // that this delimiter is a row delimiter.
+            if ( strMatchedDelimiter.length &&
+                (strMatchedDelimiter != strDelimiter)
+                ) {
+
+                // Since we have reached a new row of data,
+                // add an empty row to our data array.
+                arrData.push( [] );
+            }
+
+            // Now that we have our delimiter out of the way,
+            // let's check to see which kind of value we
+            // captured (quoted or unquoted).
+            if ( arrMatches[ 2 ] ){
+
+                // We found a quoted value. When we capture
+                // this value, unescape any double quotes.
+                var strMatchedValue = arrMatches[ 2 ].replace(
+                        new RegExp( "\"\"", "g" ), "\"" );
+
+            } else {
+                // We found a non-quoted value.
+                var strMatchedValue = arrMatches[ 3 ];
+            }
+
+            if ( hasNumber( strMatchedValue ) ) {
+                strMatchedValue = toFloat( strMatchedValue );
+            }
+
+            // Now that we have our value string, let's add
+            // it to the data array.
+            arrData[ arrData.length - 1 ].push( strMatchedValue );
+        }
+
+        // Return the parsed data.
+        return arrData.filter( item =>
+                    item.filter( inner => inner !== "" ).length )
+    }
+    function hasNumber( str ) {
+        return /\d/.test( str );
+    }
+
+    function toFloat( str ) {
+        if (!isNaN( str )) return parseFloat( str ) // if number return float
+        if (str.includes("/") && !str.includes(".")) {
+            return str
+                .split( " " )
+                .filter( item => item !== "" ) // for multiple spaces
+                .reduce( ( total, item ) => {
+                    if ( item.includes( "/" ) ) {
+                        let frac = item
+                            .split( "/" )
+                            .filter( item => item !== "" );
+                        return total + parseFloat( frac[0] / frac[1] )}
+                    return total + parseFloat( item )
+                    }, 0 )
+        }
+        return str
+    }
+
+    /////////////////TO DO//////////////////////////////////
+
+    let CUTTER = 0.375;         // end mill diameter used to space panels
+    let GAP = 0;                // gap + bit size = total space
+    let ERRORS = [];            // catch all panels that don't fit
+    let MATERIAL = {           // sheet size and options
+            width: 49,
+            height: 97,
+            margins: 0.25,
+            max_width: () => MATERIAL.width - MATERIAL.margins * 2 + CUTTER,
+            max_height: () => MATERIAL.height - MATERIAL.margins * 2 + CUTTER
+        };
+
+    function Nest( panels,
+            firstPanelRow = 1,
+            metricUnits = false,
+            cutter = CUTTER,
+            gap = GAP,
+            material = MATERIAL
+    ) {
+
+        function panelArrayCreator() {
+            // console.log(CSVToArray( panels ));
+            return new List( CSVToArray( panels )
+                    .slice( firstPanelRow )
+                    .flatMap( i => {
+                        return quantityIDs( i ).map( i => new Panel( i ) ) } )
+                )
+                .flat()
+                .filterTooBig()
+        }
+
+        function quantityIDs( [ id, quantity, width, height ] ) {
+            let n = 1, uniqueIDs = [];
+            while ( quantity >= n ) {
+                uniqueIDs.push( [ `${id} (${n}/${quantity})`, parseFloat(width), parseFloat(height) ] );
+                n++;
+            }
+            // console.log(uniqueIDs);
+            return uniqueIDs
+        }
+
+        ERRORS = [];
+        const PANELS = panelArrayCreator();          // raw csv panel input converted
+        // const METRIC_UNITS = metricUnits  // default false
+        // const TARGET_FIT = 0.8                      // ratio of a good fit per sheet
+        CUTTER = cutter;
+        GAP = gap;
+        MATERIAL.width = material.width;
+        MATERIAL.height = material.height;
+        MATERIAL.margins = material.margins;
+
+
+
+        function fillColumn( panels ) {
+            let column = new List( panels.widest().place() );
+            let maxWidth = column[0].width;
+            // add rows of panels to column until
+            // no space remains or no more panels
+            while ( panels.fitsColumn( column ) ) {
+                let row = new List(
+                    panels.fitsColumn( column ).place()
+                );
+                // add more panels to row if space remains
+                while ( panels.fitsRow( row, maxWidth ) ) {
+                    row.push( panels.fitsRow( row, maxWidth ).place() );
+                }
+                // return nested array only if
+                // more than one panel in row
+                if ( row.length === 1 ) column.push( row[0] );
+                else column.push( row );
+            }
+            // smallest pieces to center of column
+            // return column.shuffle()
+            return column.ascendingWidth()
+        }
+
+
+        function makeColumns ( panels ) {
+            let columns = new List();
+            while ( panels.notPlaced().length > 0 ) {
+                let column = fillColumn( panels );
+                columns.push( new Column (
+                    column.columnWidth(),       //width
+                    column.columnHeight(),      // height
+                    column.columnArea(),        // area
+                    column                      // group
+                ));
+            }
+            return columns
+        }
+
+        function fillSheet( columns ) {
+            let sheet = new List( columns.widest().place() );
+            while ( columns.fitsSheet( sheet ) ) {
+                sheet.push( columns.fitsSheet( sheet ).place() );
+            }
+            // smallest pieces to center of sheet
+            // return sheet.shuffle()
+            return sheet
+        }
+
+        function makeSheets( panels ) {
+            let columns = makeColumns( panels );
+            let sheets =  new List();
+            while ( columns.notPlaced().length > 0 ) {
+                let sheet = fillSheet( columns );
+                addCoordinates( sheet, sheets.length );
+                sheets.push( new Sheet(
+                    sheet.filledWidth(),                        // width
+                    sheet.filledHeight(),                       // height
+                    sheet.filledArea(),                         // area
+                    sheet.map(list => list.group).flatten(2),   // group
+                    sheet,                                      // columns
+                    sheets.length + 1                           // id
+                ));
+            }
+            return sheets
+        }
+
+        function addCoordinates( columns, multiplier ) {
+            let startX = MATERIAL.margins + MATERIAL.width * multiplier;
+            let startY = MATERIAL.margins;
+            // start X and Y for svg output with multiple sheets
+
+            let xPos = new List();
+
+            columns.forEach( ( column, i ) => {
+                // xPos map of columns, first index === start
+                if ( i === 0 ) { xPos.push( startX ); }
+                // everything after calculated += prev. width
+                else { xPos.push(xPos.last() + columns[i - 1].width); }
+
+                let yPos = new List();
+
+                // iterate each row in column
+                column.group.forEach( ( row, j, rows ) => {
+                    // yPos map of rows, first index === start
+                    if ( j === 0 ) { yPos.push( startY ); }
+                    // everything after calculated += prev. height
+                    // with appropriate method for row type
+                    else if ( rows[j - 1] instanceof List ) {
+                        yPos.push(yPos.last() + rows[j - 1].filledHeight());
+                    }
+                    else { yPos.push(yPos.last() + rows[j - 1].height); }
+
+                    // add x0 and y0 prop to each row in column
+                    if ( row instanceof Panel ) {
+                        row.x0 = xPos[i];
+                        row.y0 = yPos[j];
+                    }
+                    else {
+                        row.forEach(( rowCol, k ) => {
+                            if ( k === 0 ) { rowCol.x0 = xPos[i]; }
+                            else { rowCol.x0 = row[k-1].x0 + row[k-1].width; }
+                            rowCol.y0 = yPos[j];
+                        });
+                    }
+                });
+            });
+        }
+        let sheets = makeSheets( PANELS );
+        return [ PANELS, sheets, ERRORS ]
+    }
+
+
+
+
+    class Placement {
+        constructor() {
+            this.placed = false;
+        }
+        place() {
+            this.placed = true;
+            return this
+        }
+    }
+
+    class Panel extends Placement {
+        constructor( [ id, width, height ] ) {
+            super();
+            this.id = id;
+            this.width = width + CUTTER + GAP;
+            this.height = height + CUTTER + GAP;
+            this.area = this.height * this.width;
+            this.x0 = 0;
+            this.y0 = 0;
+        }
+    }
+
+    class Column extends Placement {
+       constructor( width, height, area, group ){
+            super();
+            this.width = width;
+            this.height = height;
+            this.area = area;
+            this.group = group;
+        }
+    }
+
+    class Sheet extends Column {
+       constructor( width, height, area, group, columns, id ){
+            super( width, height, area, group  );
+            this.columns = columns;
+            this.sheet_width = MATERIAL.width;
+            this.sheet_height = MATERIAL.height;
+            this.sheet_area = MATERIAL.width * MATERIAL.height;
+            this.waste_area = this.sheet_area - this.area;
+            this.waste_ratio = 1 - this.area / this.sheet_area;
+            this.id = "Sheet " + id;
+            delete this.placed;
+        }
+    }
+
+    class List extends Array {
+    //  methods for arrays of Panel or group objects
+        // extending array methods
+        first() {
+            return this[0]
+        }
+        last() {
+            return this[this.length-1]
+        }
+        flatten( dimensions = 1 ) {
+            let flattened = this;
+            while ( dimensions-- ) {
+                flattened = flattened.flat();
+                // dimensions--
+            }
+            return flattened
+        }
+        // removeIndex( index ) {
+        //     let list = [...this]
+        //     this = [...list.slice(0, index), ...list.slice(index + 1)]
+        // }
+        // removeValue( value ) {
+        //     this.removeIndex( array.indexOf( value ) )
+        // }
+        shuffle() {
+            if ( this.length < 3 ) return this
+            return new List( ...this.slice(1), this.first() )
+        }
+        // sorting methods
+        ascendingWidth() {
+            return new List( ...this )
+                .sort(( a, b ) => b.width != a.width ?
+                    b.width - a.width :
+                    b.height - a.height)
+        }
+        ascendingHeight() {
+            return new List( ...this )
+                .sort(( a, b ) => b.height != a.height ?
+                    b.height - a.height :
+                    b.width - a.width)
+        }
+        filterTooBig() {
+            return this.map(panel => {
+                    if ( panel.width > MATERIAL.max_width() ||
+                         panel.height > MATERIAL.max_height() ) {
+                        ERRORS.push(`Panel ${panel.id} is too big`);
+                        return false
+                    }
+                    return panel
+                })
+                .filter(panel => panel) // removes empty entry
+        }
+        // methods to find unplaced panels
+        notPlaced() {
+            return this.filter(panel => !panel.placed)
+        }
+        widest() {
+            return this.notPlaced().ascendingWidth().first()
+        }
+        narrowest() {
+            return this.notPlaced().ascendingWidth().last()
+        }
+        tallest() {
+            return this.notPlaced().ascendingHeight().first()
+        }
+        shortest() {
+            return this.notPlaced().ascendingHeight().last()
+        }
+        biggest() {
+            return this
+                .sort(( a, b ) => b.area - a.area )
+                .notPlaced()
+                .first()
+        }
+        // group measurement methods
+        totalWidth() {
+            return this.reduce(( total, panel ) => {
+                if ( panel instanceof List ) {
+                    return total + panel.ascendingWidth().first().width
+                }
+                return total + panel.width
+            }, 0)
+        }
+        totalHeight() {
+            return this.reduce( ( total, panel ) => {
+                if ( panel instanceof List ) {
+                    return total + panel.ascendingHeight().first().height
+                }
+                return total + panel.height
+            }, 0 )
+        }
+        totalArea() {
+            return this.reduce((total, panel) => total + panel.area, 0)
+        }
+        columnWidth() {
+            return this.flat().ascendingWidth().first().width
+        }
+        columnHeight() {
+            return this.totalHeight()
+        }
+        columnArea() {
+            return this.flat().totalArea()
+        }
+        filledHeight() {
+            return this.ascendingHeight().first().height
+        }
+        filledWidth() {
+            return this.totalWidth()
+        }
+        filledArea() {
+            return this.flat().totalArea()
+        }
+        remainingWidth( maxWidth ) {
+            return maxWidth - this.totalWidth()
+        }
+        remainingHeight( maxHeight ) {
+            return maxHeight - this.totalHeight()
+        }
+        fitsColumn( group, maxHeight = MATERIAL.height ) {
+            return this.notPlaced()
+                .filter(panel => panel.width <= group[0].width)
+                .filter(panel => panel.height < group.remainingHeight( maxHeight ))
+                // .biggest()
+                .widest()
+        }
+        fitsRow( group, maxWidth ) {
+            return this.notPlaced()
+                .filter(panel => panel.height <= group[0].height)
+                .filter(panel => panel.width < group.remainingWidth( maxWidth ))
+                // .biggest()
+                .widest()
+        }
+        fitsSheet( group, maxWidth = MATERIAL.width ) {
+            return this.notPlaced()
+                // .filter(panel => panel.height <= group[0].height)
+                .filter(panel => panel.width < group.remainingWidth( maxWidth ))
+                .widest()
+        }
+    }
+
+    const subscriber_queue = [];
+    /**
+     * Create a `Writable` store that allows both updating and reading by subscription.
+     * @param {*=}value initial value
+     * @param {StartStopNotifier=}start start and stop notifications for subscriptions
+     */
+    function writable(value, start = noop) {
+        let stop;
+        const subscribers = [];
+        function set(new_value) {
+            if (safe_not_equal(value, new_value)) {
+                value = new_value;
+                if (stop) { // store is ready
+                    const run_queue = !subscriber_queue.length;
+                    for (let i = 0; i < subscribers.length; i += 1) {
+                        const s = subscribers[i];
+                        s[1]();
+                        subscriber_queue.push(s, value);
+                    }
+                    if (run_queue) {
+                        for (let i = 0; i < subscriber_queue.length; i += 2) {
+                            subscriber_queue[i][0](subscriber_queue[i + 1]);
+                        }
+                        subscriber_queue.length = 0;
+                    }
+                }
+            }
+        }
+        function update(fn) {
+            set(fn(value));
+        }
+        function subscribe(run, invalidate = noop) {
+            const subscriber = [run, invalidate];
+            subscribers.push(subscriber);
+            if (subscribers.length === 1) {
+                stop = start(set) || noop;
+            }
+            run(value);
+            return () => {
+                const index = subscribers.indexOf(subscriber);
+                if (index !== -1) {
+                    subscribers.splice(index, 1);
+                }
+                if (subscribers.length === 0) {
+                    stop();
+                    stop = null;
+                }
+            };
+        }
+        return { set, update, subscribe };
+    }
+
+    // localStore.js
+    // import YAML from 'yaml';
+
+    const localStore = (key, initial) => {
+      // receives the key of the local storage and an initial value
+
+      // helper function
+      const toString = (value) => JSON.stringify(value, null, 2);
+      // helper function
+      const toObj = JSON.parse;
+
+      // item not present in local storage
+      if (sessionStorage.getItem(key) === null) {
+        // initialize local storage with initial value
+        sessionStorage.setItem(key, toString(initial));
+      }
+
+      // convert to object
+      const saved = toObj(sessionStorage.getItem(key));
+
+      // create the underlying writable store
+      const { subscribe, set, update } = writable(saved);
+
+      return {
+        subscribe,
+        set: (value) => {
+          // save also to local storage as a string
+          sessionStorage.setItem(key, toString(value));
+          return set(value)
+        },
+        update
+      }
+    };
+
+    // stores.js
+
+    // export const cabinets = localStore('cabinets', [])
+
+    // export const inputState = localStore('input-state', "cabinet")
+    // export const cabinetType = localStore('cabinet-type', "bathroom")
+
+    const panels = localStore('panels', []);
+    const sheets = localStore('sheets', []);
+    const fileInfo = localStore('file-info', {});
+    const svg = localStore('svg', '');
+
+    // export const inputTemplate = localStore('template', template)
+
+    var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+    function createCommonjsModule(fn, basedir, module) {
+    	return module = {
+    	  path: basedir,
+    	  exports: {},
+    	  require: function (path, base) {
+          return commonjsRequire(path, (base === undefined || base === null) ? module.path : base);
+        }
+    	}, fn(module, module.exports), module.exports;
+    }
+
+    function commonjsRequire () {
+    	throw new Error('Dynamic requires are not currently supported by @rollup/plugin-commonjs');
+    }
+
+    var FileSaver_min = createCommonjsModule(function (module, exports) {
+    (function(a,b){b();})(commonjsGlobal,function(){function b(a,b){return "undefined"==typeof b?b={autoBom:!1}:"object"!=typeof b&&(console.warn("Deprecated: Expected third argument to be a object"),b={autoBom:!b}),b.autoBom&&/^\s*(?:text\/\S*|application\/xml|\S*\/\S*\+xml)\s*;.*charset\s*=\s*utf-8/i.test(a.type)?new Blob(["\uFEFF",a],{type:a.type}):a}function c(a,b,c){var d=new XMLHttpRequest;d.open("GET",a),d.responseType="blob",d.onload=function(){g(d.response,b,c);},d.onerror=function(){console.error("could not download file");},d.send();}function d(a){var b=new XMLHttpRequest;b.open("HEAD",a,!1);try{b.send();}catch(a){}return 200<=b.status&&299>=b.status}function e(a){try{a.dispatchEvent(new MouseEvent("click"));}catch(c){var b=document.createEvent("MouseEvents");b.initMouseEvent("click",!0,!0,window,0,0,0,80,20,!1,!1,!1,!1,0,null),a.dispatchEvent(b);}}var f="object"==typeof window&&window.window===window?window:"object"==typeof self&&self.self===self?self:"object"==typeof commonjsGlobal&&commonjsGlobal.global===commonjsGlobal?commonjsGlobal:void 0,a=f.navigator&&/Macintosh/.test(navigator.userAgent)&&/AppleWebKit/.test(navigator.userAgent)&&!/Safari/.test(navigator.userAgent),g=f.saveAs||("object"!=typeof window||window!==f?function(){}:"download"in HTMLAnchorElement.prototype&&!a?function(b,g,h){var i=f.URL||f.webkitURL,j=document.createElement("a");g=g||b.name||"download",j.download=g,j.rel="noopener","string"==typeof b?(j.href=b,j.origin===location.origin?e(j):d(j.href)?c(b,g,h):e(j,j.target="_blank")):(j.href=i.createObjectURL(b),setTimeout(function(){i.revokeObjectURL(j.href);},4E4),setTimeout(function(){e(j);},0));}:"msSaveOrOpenBlob"in navigator?function(f,g,h){if(g=g||f.name||"download","string"!=typeof f)navigator.msSaveOrOpenBlob(b(f,h),g);else if(d(f))c(f,g,h);else {var i=document.createElement("a");i.href=f,i.target="_blank",setTimeout(function(){e(i);});}}:function(b,d,e,g){if(g=g||open("","_blank"),g&&(g.document.title=g.document.body.innerText="downloading..."),"string"==typeof b)return c(b,d,e);var h="application/octet-stream"===b.type,i=/constructor/i.test(f.HTMLElement)||f.safari,j=/CriOS\/[\d]+/.test(navigator.userAgent);if((j||h&&i||a)&&"undefined"!=typeof FileReader){var k=new FileReader;k.onloadend=function(){var a=k.result;a=j?a:a.replace(/^data:[^;]*;/,"data:attachment/file;"),g?g.location.href=a:location=a,g=null;},k.readAsDataURL(b);}else {var l=f.URL||f.webkitURL,m=l.createObjectURL(b);g?g.location=m:location.href=m,g=null,setTimeout(function(){l.revokeObjectURL(m);},4E4);}});f.saveAs=g.saveAs=g,(module.exports=g);});
+
+
+    });
+
+    /* src/components/Import.svelte generated by Svelte v3.24.1 */
+    const file = "src/components/Import.svelte";
+
+    // (136:6) {:else}
+    function create_else_block(ctx) {
+    	let h1;
+    	let mounted;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			h1 = element("h1");
+    			h1.textContent = "💩";
+    			attr_dev(h1, "class", "svelte-118u7vq");
+    			add_location(h1, file, 136, 9, 2721);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, h1, anchor);
+
+    			if (!mounted) {
+    				dispose = listen_dev(h1, "mouseover", /*mouseover_handler*/ ctx[10], false, false, false);
+    				mounted = true;
+    			}
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(h1);
+    			mounted = false;
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block.name,
+    		type: "else",
+    		source: "(136:6) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (134:6) {#if !badFile}
+    function create_if_block(ctx) {
+    	let img;
+    	let img_src_value;
+
+    	const block = {
+    		c: function create() {
+    			img = element("img");
+    			if (img.src !== (img_src_value = "./favicon.png")) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", "open csv file");
+    			attr_dev(img, "class", "svelte-118u7vq");
+    			add_location(img, file, 134, 9, 2652);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, img, anchor);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(img);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block.name,
+    		type: "if",
+    		source: "(134:6) {#if !badFile}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment(ctx) {
+    	let div0;
+    	let input0;
+    	let t0;
+    	let label;
+    	let t1;
+    	let div1;
+    	let h4;
+    	let t3;
+    	let div2;
+    	let a;
+    	let t4;
+    	let a_href_value;
+    	let a_download_value;
+    	let t5;
+    	let div3;
+    	let h50;
+    	let t7;
+    	let input1;
+    	let t8;
+    	let span;
+    	let t10;
+    	let input2;
+    	let t11;
+    	let div4;
+    	let h51;
+    	let t13;
+    	let input3;
+    	let t14;
+    	let div5;
+    	let h52;
+    	let t16;
+    	let input4;
+    	let t17;
+    	let div6;
+    	let h53;
+    	let t19;
+    	let input5;
+    	let t20;
+    	let div7;
+    	let h54;
+    	let t22;
+    	let input6;
+    	let mounted;
+    	let dispose;
+
+    	function select_block_type(ctx, dirty) {
+    		if (!/*badFile*/ ctx[1]) return create_if_block;
+    		return create_else_block;
+    	}
+
+    	let current_block_type = select_block_type(ctx);
+    	let if_block = current_block_type(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div0 = element("div");
+    			input0 = element("input");
+    			t0 = space();
+    			label = element("label");
+    			if_block.c();
+    			t1 = space();
+    			div1 = element("div");
+    			h4 = element("h4");
+    			h4.textContent = "recalculate";
+    			t3 = space();
+    			div2 = element("div");
+    			a = element("a");
+    			t4 = text("save");
+    			t5 = space();
+    			div3 = element("div");
+    			h50 = element("h5");
+    			h50.textContent = "Material W x H";
+    			t7 = space();
+    			input1 = element("input");
+    			t8 = space();
+    			span = element("span");
+    			span.textContent = "x";
+    			t10 = space();
+    			input2 = element("input");
+    			t11 = space();
+    			div4 = element("div");
+    			h51 = element("h5");
+    			h51.textContent = "Margins";
+    			t13 = space();
+    			input3 = element("input");
+    			t14 = space();
+    			div5 = element("div");
+    			h52 = element("h5");
+    			h52.textContent = "Kerf";
+    			t16 = space();
+    			input4 = element("input");
+    			t17 = space();
+    			div6 = element("div");
+    			h53 = element("h5");
+    			h53.textContent = "Gap";
+    			t19 = space();
+    			input5 = element("input");
+    			t20 = space();
+    			div7 = element("div");
+    			h54 = element("h5");
+    			h54.textContent = "Metric";
+    			t22 = space();
+    			input6 = element("input");
+    			attr_dev(input0, "class", "inputfile svelte-118u7vq");
+    			attr_dev(input0, "name", "file");
+    			attr_dev(input0, "id", "file");
+    			attr_dev(input0, "type", "file");
+    			add_location(input0, file, 131, 3, 2499);
+    			attr_dev(label, "for", "file");
+    			attr_dev(label, "class", "svelte-118u7vq");
+    			add_location(label, file, 132, 3, 2603);
+    			attr_dev(div0, "class", "upload-wrapper svelte-118u7vq");
+    			add_location(div0, file, 130, 0, 2467);
+    			attr_dev(h4, "class", "svelte-118u7vq");
+    			add_location(h4, file, 141, 3, 2810);
+    			attr_dev(div1, "class", "svelte-118u7vq");
+    			add_location(div1, file, 140, 0, 2801);
+    			attr_dev(a, "href", a_href_value = "data:text/plain;charset=utf-8," + encodeURIComponent(/*$svg*/ ctx[7]));
+    			attr_dev(a, "download", a_download_value = "" + (/*$fileInfo*/ ctx[6].name + ".svg"));
+    			attr_dev(a, "class", "svelte-118u7vq");
+    			add_location(a, file, 144, 3, 2880);
+    			attr_dev(div2, "class", "save svelte-118u7vq");
+    			add_location(div2, file, 143, 0, 2858);
+    			attr_dev(h50, "class", "svelte-118u7vq");
+    			add_location(h50, file, 150, 3, 3172);
+    			attr_dev(input1, "class", "input svelte-118u7vq");
+    			attr_dev(input1, "type", "number");
+    			add_location(input1, file, 151, 3, 3199);
+    			attr_dev(span, "class", "svelte-118u7vq");
+    			add_location(span, file, 152, 4, 3269);
+    			attr_dev(input2, "class", "input svelte-118u7vq");
+    			attr_dev(input2, "type", "number");
+    			add_location(input2, file, 153, 3, 3287);
+    			attr_dev(div3, "class", "input-wrapper svelte-118u7vq");
+    			add_location(div3, file, 149, 0, 3141);
+    			attr_dev(h51, "class", "svelte-118u7vq");
+    			add_location(h51, file, 156, 3, 3392);
+    			attr_dev(input3, "class", "input svelte-118u7vq");
+    			attr_dev(input3, "type", "number");
+    			attr_dev(input3, "step", "0.005");
+    			add_location(input3, file, 157, 3, 3412);
+    			attr_dev(div4, "class", "input-wrapper svelte-118u7vq");
+    			add_location(div4, file, 155, 0, 3361);
+    			attr_dev(h52, "class", "svelte-118u7vq");
+    			add_location(h52, file, 160, 3, 3531);
+    			attr_dev(input4, "class", "input svelte-118u7vq");
+    			attr_dev(input4, "type", "number");
+    			attr_dev(input4, "step", "0.005");
+    			add_location(input4, file, 161, 3, 3548);
+    			attr_dev(div5, "class", "input-wrapper svelte-118u7vq");
+    			add_location(div5, file, 159, 0, 3500);
+    			attr_dev(h53, "class", "svelte-118u7vq");
+    			add_location(h53, file, 164, 3, 3657);
+    			attr_dev(input5, "class", "input svelte-118u7vq");
+    			attr_dev(input5, "type", "number");
+    			attr_dev(input5, "step", "0.005");
+    			add_location(input5, file, 165, 3, 3673);
+    			attr_dev(div6, "class", "input-wrapper svelte-118u7vq");
+    			add_location(div6, file, 163, 0, 3626);
+    			attr_dev(h54, "class", "svelte-118u7vq");
+    			add_location(h54, file, 168, 3, 3779);
+    			attr_dev(input6, "class", "input svelte-118u7vq");
+    			attr_dev(input6, "type", "checkbox");
+    			add_location(input6, file, 169, 3, 3798);
+    			attr_dev(div7, "class", "input-wrapper svelte-118u7vq");
+    			add_location(div7, file, 167, 0, 3748);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div0, anchor);
+    			append_dev(div0, input0);
+    			/*input0_binding*/ ctx[9](input0);
+    			append_dev(div0, t0);
+    			append_dev(div0, label);
+    			if_block.m(label, null);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, h4);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, a);
+    			append_dev(a, t4);
+    			insert_dev(target, t5, anchor);
+    			insert_dev(target, div3, anchor);
+    			append_dev(div3, h50);
+    			append_dev(div3, t7);
+    			append_dev(div3, input1);
+    			set_input_value(input1, /*material*/ ctx[2].width);
+    			append_dev(div3, t8);
+    			append_dev(div3, span);
+    			append_dev(div3, t10);
+    			append_dev(div3, input2);
+    			set_input_value(input2, /*material*/ ctx[2].height);
+    			insert_dev(target, t11, anchor);
+    			insert_dev(target, div4, anchor);
+    			append_dev(div4, h51);
+    			append_dev(div4, t13);
+    			append_dev(div4, input3);
+    			set_input_value(input3, /*material*/ ctx[2].margins);
+    			insert_dev(target, t14, anchor);
+    			insert_dev(target, div5, anchor);
+    			append_dev(div5, h52);
+    			append_dev(div5, t16);
+    			append_dev(div5, input4);
+    			set_input_value(input4, /*cutter*/ ctx[3]);
+    			insert_dev(target, t17, anchor);
+    			insert_dev(target, div6, anchor);
+    			append_dev(div6, h53);
+    			append_dev(div6, t19);
+    			append_dev(div6, input5);
+    			set_input_value(input5, /*gap*/ ctx[4]);
+    			insert_dev(target, t20, anchor);
+    			insert_dev(target, div7, anchor);
+    			append_dev(div7, h54);
+    			append_dev(div7, t22);
+    			append_dev(div7, input6);
+    			input6.checked = /*units*/ ctx[5];
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(input0, "change", /*showFile*/ ctx[8], false, false, false),
+    					listen_dev(h4, "click", /*showFile*/ ctx[8], false, false, false),
+    					listen_dev(input1, "input", /*input1_input_handler*/ ctx[11]),
+    					listen_dev(input2, "input", /*input2_input_handler*/ ctx[12]),
+    					listen_dev(input3, "input", /*input3_input_handler*/ ctx[13]),
+    					listen_dev(input4, "input", /*input4_input_handler*/ ctx[14]),
+    					listen_dev(input5, "input", /*input5_input_handler*/ ctx[15]),
+    					listen_dev(input6, "change", /*input6_change_handler*/ ctx[16])
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
+    				if_block.p(ctx, dirty);
+    			} else {
+    				if_block.d(1);
+    				if_block = current_block_type(ctx);
+
+    				if (if_block) {
+    					if_block.c();
+    					if_block.m(label, null);
+    				}
+    			}
+
+    			if (dirty & /*$svg*/ 128 && a_href_value !== (a_href_value = "data:text/plain;charset=utf-8," + encodeURIComponent(/*$svg*/ ctx[7]))) {
+    				attr_dev(a, "href", a_href_value);
+    			}
+
+    			if (dirty & /*$fileInfo*/ 64 && a_download_value !== (a_download_value = "" + (/*$fileInfo*/ ctx[6].name + ".svg"))) {
+    				attr_dev(a, "download", a_download_value);
+    			}
+
+    			if (dirty & /*material*/ 4 && to_number(input1.value) !== /*material*/ ctx[2].width) {
+    				set_input_value(input1, /*material*/ ctx[2].width);
+    			}
+
+    			if (dirty & /*material*/ 4 && to_number(input2.value) !== /*material*/ ctx[2].height) {
+    				set_input_value(input2, /*material*/ ctx[2].height);
+    			}
+
+    			if (dirty & /*material*/ 4 && to_number(input3.value) !== /*material*/ ctx[2].margins) {
+    				set_input_value(input3, /*material*/ ctx[2].margins);
+    			}
+
+    			if (dirty & /*cutter*/ 8 && to_number(input4.value) !== /*cutter*/ ctx[3]) {
+    				set_input_value(input4, /*cutter*/ ctx[3]);
+    			}
+
+    			if (dirty & /*gap*/ 16 && to_number(input5.value) !== /*gap*/ ctx[4]) {
+    				set_input_value(input5, /*gap*/ ctx[4]);
+    			}
+
+    			if (dirty & /*units*/ 32) {
+    				input6.checked = /*units*/ ctx[5];
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div0);
+    			/*input0_binding*/ ctx[9](null);
+    			if_block.d();
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div1);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(div2);
+    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(div3);
+    			if (detaching) detach_dev(t11);
+    			if (detaching) detach_dev(div4);
+    			if (detaching) detach_dev(t14);
+    			if (detaching) detach_dev(div5);
+    			if (detaching) detach_dev(t17);
+    			if (detaching) detach_dev(div6);
+    			if (detaching) detach_dev(t20);
+    			if (detaching) detach_dev(div7);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance($$self, $$props, $$invalidate) {
+    	let $fileInfo;
+    	let $panels;
+    	let $sheets;
+    	let $svg;
+    	validate_store(fileInfo, "fileInfo");
+    	component_subscribe($$self, fileInfo, $$value => $$invalidate(6, $fileInfo = $$value));
+    	validate_store(panels, "panels");
+    	component_subscribe($$self, panels, $$value => $$invalidate(17, $panels = $$value));
+    	validate_store(sheets, "sheets");
+    	component_subscribe($$self, sheets, $$value => $$invalidate(18, $sheets = $$value));
+    	validate_store(svg, "svg");
+    	component_subscribe($$self, svg, $$value => $$invalidate(7, $svg = $$value));
+    	let files;
+
+    	function showFile() {
+    		let file = files.files[0];
+    		let reader = new FileReader();
+    		set_store_value(fileInfo, $fileInfo.name = file.name.replace(".csv", ""), $fileInfo);
+    		reader.readAsText(file);
+
+    		if (file.name.includes(".csv")) {
+    			// if ( file.type === 'text/csv' ) {
+    			reader.onload = function (event) {
+    				let nest = Nest(event.target.result, 4, units, cutter, gap, material); // csv file
+    				// panel starting row csv
+
+    				$$invalidate(1, badFile = false);
+    				set_store_value(panels, $panels = nest[0]);
+    				set_store_value(sheets, $sheets = nest[1]);
+    				set_store_value(fileInfo, $fileInfo.errors = nest[2], $fileInfo);
+    			};
+    		} else {
+    			$$invalidate(1, badFile = true);
+    		}
+    	}
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Import> was created with unknown prop '${key}'`);
+    	});
+
+    	let { $$slots = {}, $$scope } = $$props;
+    	validate_slots("Import", $$slots, []);
+
+    	function input0_binding($$value) {
+    		binding_callbacks[$$value ? "unshift" : "push"](() => {
+    			files = $$value;
+    			$$invalidate(0, files);
+    		});
+    	}
+
+    	const mouseover_handler = () => $$invalidate(1, badFile = false);
+
+    	function input1_input_handler() {
+    		material.width = to_number(this.value);
+    		$$invalidate(2, material);
+    	}
+
+    	function input2_input_handler() {
+    		material.height = to_number(this.value);
+    		$$invalidate(2, material);
+    	}
+
+    	function input3_input_handler() {
+    		material.margins = to_number(this.value);
+    		$$invalidate(2, material);
+    	}
+
+    	function input4_input_handler() {
+    		cutter = to_number(this.value);
+    		$$invalidate(3, cutter);
+    	}
+
+    	function input5_input_handler() {
+    		gap = to_number(this.value);
+    		$$invalidate(4, gap);
+    	}
+
+    	function input6_change_handler() {
+    		units = this.checked;
+    		$$invalidate(5, units);
+    	}
+
+    	$$self.$capture_state = () => ({
+    		Nest,
+    		panels,
+    		sheets,
+    		fileInfo,
+    		svg,
+    		saveAs: FileSaver_min.saveAs,
+    		files,
+    		showFile,
+    		badFile,
+    		material,
+    		cutter,
+    		gap,
+    		units,
+    		$fileInfo,
+    		$panels,
+    		$sheets,
+    		$svg
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("files" in $$props) $$invalidate(0, files = $$props.files);
+    		if ("badFile" in $$props) $$invalidate(1, badFile = $$props.badFile);
+    		if ("material" in $$props) $$invalidate(2, material = $$props.material);
+    		if ("cutter" in $$props) $$invalidate(3, cutter = $$props.cutter);
+    		if ("gap" in $$props) $$invalidate(4, gap = $$props.gap);
+    		if ("units" in $$props) $$invalidate(5, units = $$props.units);
+    	};
+
+    	let badFile;
+    	let material;
+    	let cutter;
+    	let gap;
+    	let units;
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	 $$invalidate(1, badFile = false);
+
+    	// gCode = "g00 \ng20"
+    	 $$invalidate(2, material = { width: 49, height: 97, margins: 0.25 });
+
+    	 $$invalidate(3, cutter = 0.375);
+    	 $$invalidate(4, gap = 0);
+    	 $$invalidate(5, units = false);
+
+    	return [
+    		files,
+    		badFile,
+    		material,
+    		cutter,
+    		gap,
+    		units,
+    		$fileInfo,
+    		$svg,
+    		showFile,
+    		input0_binding,
+    		mouseover_handler,
+    		input1_input_handler,
+    		input2_input_handler,
+    		input3_input_handler,
+    		input4_input_handler,
+    		input5_input_handler,
+    		input6_change_handler
+    	];
+    }
+
+    class Import extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance, create_fragment, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Import",
+    			options,
+    			id: create_fragment.name
+    		});
+    	}
+    }
+
+    /* src/components/Viewer.svelte generated by Svelte v3.24.1 */
+    const file$1 = "src/components/Viewer.svelte";
+
+    function get_each_context(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[18] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[21] = list[i];
+    	child_ctx[23] = i;
+    	return child_ctx;
+    }
+
+    // (129:0) {#if checkSize}
+    function create_if_block_1(ctx) {
+    	let div;
+    	let h40;
+    	let t0;
+    	let t1;
+    	let t2;
+    	let h41;
+    	let t3;
+    	let t4;
+    	let t5;
+    	let h42;
+    	let t6;
+    	let t7;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			h40 = element("h4");
+    			t0 = text("Panel: ");
+    			t1 = text(/*id*/ ctx[0]);
+    			t2 = space();
+    			h41 = element("h4");
+    			t3 = text("Width: ");
+    			t4 = text(/*width*/ ctx[1]);
+    			t5 = space();
+    			h42 = element("h4");
+    			t6 = text("Height: ");
+    			t7 = text(/*height*/ ctx[2]);
+    			attr_dev(h40, "class", "sizes");
+    			add_location(h40, file$1, 130, 4, 2218);
+    			attr_dev(h41, "class", "sizes");
+    			add_location(h41, file$1, 131, 4, 2257);
+    			attr_dev(h42, "class", "sizes");
+    			add_location(h42, file$1, 132, 4, 2299);
+    			attr_dev(div, "class", "infocard svelte-1f4wqfu");
+    			set_style(div, "left", /*left*/ ctx[5] + "px");
+    			set_style(div, "top", /*top*/ ctx[4] + "px");
+    			add_location(div, file$1, 129, 0, 2153);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, h40);
+    			append_dev(h40, t0);
+    			append_dev(h40, t1);
+    			append_dev(div, t2);
+    			append_dev(div, h41);
+    			append_dev(h41, t3);
+    			append_dev(h41, t4);
+    			append_dev(div, t5);
+    			append_dev(div, h42);
+    			append_dev(h42, t6);
+    			append_dev(h42, t7);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*id*/ 1) set_data_dev(t1, /*id*/ ctx[0]);
+    			if (dirty & /*width*/ 2) set_data_dev(t4, /*width*/ ctx[1]);
+    			if (dirty & /*height*/ 4) set_data_dev(t7, /*height*/ ctx[2]);
+
+    			if (dirty & /*left*/ 32) {
+    				set_style(div, "left", /*left*/ ctx[5] + "px");
+    			}
+
+    			if (dirty & /*top*/ 16) {
+    				set_style(div, "top", /*top*/ ctx[4] + "px");
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1.name,
+    		type: "if",
+    		source: "(129:0) {#if checkSize}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (148:4) {#each $sheets as sheet, index}
+    function create_each_block_1(ctx) {
+    	let rect;
+    	let rect_id_value;
+    	let rect_x_value;
+    	let rect_width_value;
+    	let rect_height_value;
+
+    	const block = {
+    		c: function create() {
+    			rect = svg_element("rect");
+    			attr_dev(rect, "class", "sheet print svelte-1f4wqfu");
+    			attr_dev(rect, "id", rect_id_value = /*sheet*/ ctx[21].id);
+    			attr_dev(rect, "x", rect_x_value = /*index*/ ctx[23] * /*sheet*/ ctx[21].sheet_width * /*scale*/ ctx[11]);
+    			attr_dev(rect, "y", "0");
+    			attr_dev(rect, "width", rect_width_value = /*sheet*/ ctx[21].sheet_width * /*scale*/ ctx[11]);
+    			attr_dev(rect, "height", rect_height_value = /*sheet*/ ctx[21].sheet_height * /*scale*/ ctx[11]);
+    			add_location(rect, file$1, 148, 8, 2745);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, rect, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*$sheets*/ 256 && rect_id_value !== (rect_id_value = /*sheet*/ ctx[21].id)) {
+    				attr_dev(rect, "id", rect_id_value);
+    			}
+
+    			if (dirty & /*$sheets*/ 256 && rect_x_value !== (rect_x_value = /*index*/ ctx[23] * /*sheet*/ ctx[21].sheet_width * /*scale*/ ctx[11])) {
+    				attr_dev(rect, "x", rect_x_value);
+    			}
+
+    			if (dirty & /*$sheets*/ 256 && rect_width_value !== (rect_width_value = /*sheet*/ ctx[21].sheet_width * /*scale*/ ctx[11])) {
+    				attr_dev(rect, "width", rect_width_value);
+    			}
+
+    			if (dirty & /*$sheets*/ 256 && rect_height_value !== (rect_height_value = /*sheet*/ ctx[21].sheet_height * /*scale*/ ctx[11])) {
+    				attr_dev(rect, "height", rect_height_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(rect);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1.name,
+    		type: "each",
+    		source: "(148:4) {#each $sheets as sheet, index}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (180:8) {:else}
+    function create_else_block$1(ctx) {
+    	let text_1;
+    	let t_value = /*panel*/ ctx[18].id + "";
+    	let t;
+    	let text_1_x_value;
+    	let text_1_y_value;
+
+    	const block = {
+    		c: function create() {
+    			text_1 = svg_element("text");
+    			t = text(t_value);
+    			attr_dev(text_1, "class", "idv print svelte-1f4wqfu");
+    			attr_dev(text_1, "x", text_1_x_value = (/*panel*/ ctx[18].x0 - 0.25 + /*panel*/ ctx[18].width / 2) * /*scale*/ ctx[11]);
+    			attr_dev(text_1, "y", text_1_y_value = (/*panel*/ ctx[18].y0 + 1 + /*panel*/ ctx[18].height / 2) * /*scale*/ ctx[11]);
+    			add_location(text_1, file$1, 180, 12, 3682);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, text_1, anchor);
+    			append_dev(text_1, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*$panels*/ 1024 && t_value !== (t_value = /*panel*/ ctx[18].id + "")) set_data_dev(t, t_value);
+
+    			if (dirty & /*$panels*/ 1024 && text_1_x_value !== (text_1_x_value = (/*panel*/ ctx[18].x0 - 0.25 + /*panel*/ ctx[18].width / 2) * /*scale*/ ctx[11])) {
+    				attr_dev(text_1, "x", text_1_x_value);
+    			}
+
+    			if (dirty & /*$panels*/ 1024 && text_1_y_value !== (text_1_y_value = (/*panel*/ ctx[18].y0 + 1 + /*panel*/ ctx[18].height / 2) * /*scale*/ ctx[11])) {
+    				attr_dev(text_1, "y", text_1_y_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(text_1);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block$1.name,
+    		type: "else",
+    		source: "(180:8) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (172:8) {#if panel.width > panel.height}
+    function create_if_block$1(ctx) {
+    	let text_1;
+    	let t_value = /*panel*/ ctx[18].id + "";
+    	let t;
+    	let text_1_x_value;
+    	let text_1_y_value;
+
+    	const block = {
+    		c: function create() {
+    			text_1 = svg_element("text");
+    			t = text(t_value);
+    			attr_dev(text_1, "class", "idh print svelte-1f4wqfu");
+    			attr_dev(text_1, "x", text_1_x_value = (/*panel*/ ctx[18].x0 + /*panel*/ ctx[18].width / 2) * /*scale*/ ctx[11]);
+    			attr_dev(text_1, "y", text_1_y_value = (/*panel*/ ctx[18].y0 + 1 + /*panel*/ ctx[18].height / 2) * /*scale*/ ctx[11]);
+    			add_location(text_1, file$1, 172, 12, 3430);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, text_1, anchor);
+    			append_dev(text_1, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*$panels*/ 1024 && t_value !== (t_value = /*panel*/ ctx[18].id + "")) set_data_dev(t, t_value);
+
+    			if (dirty & /*$panels*/ 1024 && text_1_x_value !== (text_1_x_value = (/*panel*/ ctx[18].x0 + /*panel*/ ctx[18].width / 2) * /*scale*/ ctx[11])) {
+    				attr_dev(text_1, "x", text_1_x_value);
+    			}
+
+    			if (dirty & /*$panels*/ 1024 && text_1_y_value !== (text_1_y_value = (/*panel*/ ctx[18].y0 + 1 + /*panel*/ ctx[18].height / 2) * /*scale*/ ctx[11])) {
+    				attr_dev(text_1, "y", text_1_y_value);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(text_1);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$1.name,
+    		type: "if",
+    		source: "(172:8) {#if panel.width > panel.height}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (160:4) {#each $panels as panel}
+    function create_each_block(ctx) {
+    	let rect;
+    	let rect_id_value;
+    	let rect_x_value;
+    	let rect_y_value;
+    	let rect_width_value;
+    	let rect_height_value;
+    	let if_block_anchor;
+    	let mounted;
+    	let dispose;
+
+    	function select_block_type(ctx, dirty) {
+    		if (/*panel*/ ctx[18].width > /*panel*/ ctx[18].height) return create_if_block$1;
+    		return create_else_block$1;
+    	}
+
+    	let current_block_type = select_block_type(ctx);
+    	let if_block = current_block_type(ctx);
+
+    	const block = {
+    		c: function create() {
+    			rect = svg_element("rect");
+    			if_block.c();
+    			if_block_anchor = empty();
+    			attr_dev(rect, "class", "panel print svelte-1f4wqfu");
+    			attr_dev(rect, "id", rect_id_value = /*panel*/ ctx[18].id);
+    			attr_dev(rect, "x", rect_x_value = /*panel*/ ctx[18].x0 * /*scale*/ ctx[11]);
+    			attr_dev(rect, "y", rect_y_value = /*panel*/ ctx[18].y0 * /*scale*/ ctx[11]);
+    			attr_dev(rect, "width", rect_width_value = /*panel*/ ctx[18].width * /*scale*/ ctx[11]);
+    			attr_dev(rect, "height", rect_height_value = /*panel*/ ctx[18].height * /*scale*/ ctx[11]);
+    			add_location(rect, file$1, 160, 8, 3068);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, rect, anchor);
+    			if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+
+    			if (!mounted) {
+    				dispose = [
+    					listen_dev(rect, "mouseover", /*showSizes*/ ctx[12], false, false, false),
+    					listen_dev(rect, "mouseleave", /*hideSizes*/ ctx[13], false, false, false)
+    				];
+
+    				mounted = true;
+    			}
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*$panels*/ 1024 && rect_id_value !== (rect_id_value = /*panel*/ ctx[18].id)) {
+    				attr_dev(rect, "id", rect_id_value);
+    			}
+
+    			if (dirty & /*$panels*/ 1024 && rect_x_value !== (rect_x_value = /*panel*/ ctx[18].x0 * /*scale*/ ctx[11])) {
+    				attr_dev(rect, "x", rect_x_value);
+    			}
+
+    			if (dirty & /*$panels*/ 1024 && rect_y_value !== (rect_y_value = /*panel*/ ctx[18].y0 * /*scale*/ ctx[11])) {
+    				attr_dev(rect, "y", rect_y_value);
+    			}
+
+    			if (dirty & /*$panels*/ 1024 && rect_width_value !== (rect_width_value = /*panel*/ ctx[18].width * /*scale*/ ctx[11])) {
+    				attr_dev(rect, "width", rect_width_value);
+    			}
+
+    			if (dirty & /*$panels*/ 1024 && rect_height_value !== (rect_height_value = /*panel*/ ctx[18].height * /*scale*/ ctx[11])) {
+    				attr_dev(rect, "height", rect_height_value);
+    			}
+
+    			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
+    				if_block.p(ctx, dirty);
+    			} else {
+    				if_block.d(1);
+    				if_block = current_block_type(ctx);
+
+    				if (if_block) {
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(rect);
+    			if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    			mounted = false;
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block.name,
+    		type: "each",
+    		source: "(160:4) {#each $panels as panel}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$1(ctx) {
+    	let t;
+    	let div;
+    	let svg_1;
+    	let g0;
+    	let g1;
+    	let svg_1_width_value;
+    	let svg_1_height_value;
+    	let svg_1_viewBox_value;
+    	let if_block = /*checkSize*/ ctx[3] && create_if_block_1(ctx);
+    	let each_value_1 = /*$sheets*/ ctx[8];
+    	validate_each_argument(each_value_1);
+    	let each_blocks_1 = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks_1[i] = create_each_block_1(get_each_context_1(ctx, each_value_1, i));
+    	}
+
+    	let each_value = /*$panels*/ ctx[10];
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block(get_each_context(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			if (if_block) if_block.c();
+    			t = space();
+    			div = element("div");
+    			svg_1 = svg_element("svg");
+    			g0 = svg_element("g");
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].c();
+    			}
+
+    			g1 = svg_element("g");
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			attr_dev(g0, "id", "sheets");
+    			attr_dev(g0, "class", "svelte-1f4wqfu");
+    			add_location(g0, file$1, 146, 4, 2685);
+    			attr_dev(g1, "id", "panels");
+    			attr_dev(g1, "class", "svelte-1f4wqfu");
+    			add_location(g1, file$1, 158, 4, 3015);
+    			attr_dev(svg_1, "class", "print svelte-1f4wqfu");
+    			attr_dev(svg_1, "version", "1.1");
+    			attr_dev(svg_1, "xmlns", "http://www.w3.org/2000/svg");
+    			attr_dev(svg_1, "xmlns:xlink", "http://www.w3.org/1999/xlink");
+    			attr_dev(svg_1, "width", svg_1_width_value = /*viewBoxW*/ ctx[7] * /*scale*/ ctx[11]);
+    			attr_dev(svg_1, "height", svg_1_height_value = /*viewBoxH*/ ctx[9] * /*scale*/ ctx[11]);
+    			attr_dev(svg_1, "viewBox", svg_1_viewBox_value = "0 0 " + /*viewBoxW*/ ctx[7] * /*scale*/ ctx[11] + " " + /*viewBoxH*/ ctx[9] * /*scale*/ ctx[11]);
+    			attr_dev(svg_1, "preserveAspectRatio", "xMidYMid meet");
+    			add_location(svg_1, file$1, 138, 0, 2398);
+    			attr_dev(div, "class", "viewer svelte-1f4wqfu");
+    			add_location(div, file$1, 137, 0, 2354);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, t, anchor);
+    			insert_dev(target, div, anchor);
+    			append_dev(div, svg_1);
+    			append_dev(svg_1, g0);
+
+    			for (let i = 0; i < each_blocks_1.length; i += 1) {
+    				each_blocks_1[i].m(g0, null);
+    			}
+
+    			append_dev(svg_1, g1);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(g1, null);
+    			}
+
+    			/*div_binding*/ ctx[14](div);
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (/*checkSize*/ ctx[3]) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block_1(ctx);
+    					if_block.c();
+    					if_block.m(t.parentNode, t);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+
+    			if (dirty & /*$sheets, scale*/ 2304) {
+    				each_value_1 = /*$sheets*/ ctx[8];
+    				validate_each_argument(each_value_1);
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1(ctx, each_value_1, i);
+
+    					if (each_blocks_1[i]) {
+    						each_blocks_1[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks_1[i] = create_each_block_1(child_ctx);
+    						each_blocks_1[i].c();
+    						each_blocks_1[i].m(g0, null);
+    					}
+    				}
+
+    				for (; i < each_blocks_1.length; i += 1) {
+    					each_blocks_1[i].d(1);
+    				}
+
+    				each_blocks_1.length = each_value_1.length;
+    			}
+
+    			if (dirty & /*$panels, scale, showSizes, hideSizes*/ 15360) {
+    				each_value = /*$panels*/ ctx[10];
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(g1, null);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+
+    			if (dirty & /*viewBoxW*/ 128 && svg_1_width_value !== (svg_1_width_value = /*viewBoxW*/ ctx[7] * /*scale*/ ctx[11])) {
+    				attr_dev(svg_1, "width", svg_1_width_value);
+    			}
+
+    			if (dirty & /*viewBoxH*/ 512 && svg_1_height_value !== (svg_1_height_value = /*viewBoxH*/ ctx[9] * /*scale*/ ctx[11])) {
+    				attr_dev(svg_1, "height", svg_1_height_value);
+    			}
+
+    			if (dirty & /*viewBoxW, viewBoxH*/ 640 && svg_1_viewBox_value !== (svg_1_viewBox_value = "0 0 " + /*viewBoxW*/ ctx[7] * /*scale*/ ctx[11] + " " + /*viewBoxH*/ ctx[9] * /*scale*/ ctx[11])) {
+    				attr_dev(svg_1, "viewBox", svg_1_viewBox_value);
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(t);
+    			if (detaching) detach_dev(div);
+    			destroy_each(each_blocks_1, detaching);
+    			destroy_each(each_blocks, detaching);
+    			/*div_binding*/ ctx[14](null);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$1.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$1($$self, $$props, $$invalidate) {
+    	let $sheets;
+    	let $svg;
+    	let $panels;
+    	validate_store(sheets, "sheets");
+    	component_subscribe($$self, sheets, $$value => $$invalidate(8, $sheets = $$value));
+    	validate_store(svg, "svg");
+    	component_subscribe($$self, svg, $$value => $$invalidate(15, $svg = $$value));
+    	validate_store(panels, "panels");
+    	component_subscribe($$self, panels, $$value => $$invalidate(10, $panels = $$value));
+
+    	let id,
+    		width,
+    		height,
+    		checkSize = false,
+    		mx = 0,
+    		my = 0,
+    		top = 0,
+    		left = 0,
+    		scale = 90,
+    		svgFile; // inches to pixels
+
+    	afterUpdate(() => {
+    		set_store_value(svg, $svg = svgFile.innerHTML.toString());
+    	});
+
+    	function showSizes() {
+    		$$invalidate(3, checkSize = true);
+    		let rect = this.getBoundingClientRect();
+    		$$invalidate(4, top = rect.bottom + 12);
+    		$$invalidate(5, left = rect.left + 12);
+    		$$invalidate(0, id = this.id);
+    		$$invalidate(1, width = this.width.baseVal.valueAsString);
+    		$$invalidate(2, height = this.height.baseVal.valueAsString);
+    	}
+
+    	function hideSizes(event) {
+    		$$invalidate(3, checkSize = false);
+    	}
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Viewer> was created with unknown prop '${key}'`);
+    	});
+
+    	let { $$slots = {}, $$scope } = $$props;
+    	validate_slots("Viewer", $$slots, []);
+
+    	function div_binding($$value) {
+    		binding_callbacks[$$value ? "unshift" : "push"](() => {
+    			svgFile = $$value;
+    			$$invalidate(6, svgFile);
+    		});
+    	}
+
+    	$$self.$capture_state = () => ({
+    		panels,
+    		sheets,
+    		svg,
+    		afterUpdate,
+    		id,
+    		width,
+    		height,
+    		checkSize,
+    		mx,
+    		my,
+    		top,
+    		left,
+    		scale,
+    		svgFile,
+    		showSizes,
+    		hideSizes,
+    		viewBoxW,
+    		$sheets,
+    		viewBoxH,
+    		$svg,
+    		$panels
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("id" in $$props) $$invalidate(0, id = $$props.id);
+    		if ("width" in $$props) $$invalidate(1, width = $$props.width);
+    		if ("height" in $$props) $$invalidate(2, height = $$props.height);
+    		if ("checkSize" in $$props) $$invalidate(3, checkSize = $$props.checkSize);
+    		if ("mx" in $$props) mx = $$props.mx;
+    		if ("my" in $$props) my = $$props.my;
+    		if ("top" in $$props) $$invalidate(4, top = $$props.top);
+    		if ("left" in $$props) $$invalidate(5, left = $$props.left);
+    		if ("scale" in $$props) $$invalidate(11, scale = $$props.scale);
+    		if ("svgFile" in $$props) $$invalidate(6, svgFile = $$props.svgFile);
+    		if ("viewBoxW" in $$props) $$invalidate(7, viewBoxW = $$props.viewBoxW);
+    		if ("viewBoxH" in $$props) $$invalidate(9, viewBoxH = $$props.viewBoxH);
+    	};
+
+    	let viewBoxW;
+    	let viewBoxH;
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	$$self.$$.update = () => {
+    		if ($$self.$$.dirty & /*$sheets*/ 256) {
+    			 $$invalidate(7, viewBoxW = $sheets.length * $sheets[0].sheet_width || 61);
+    		}
+
+    		if ($$self.$$.dirty & /*$sheets*/ 256) {
+    			 $$invalidate(9, viewBoxH = $sheets[0].sheet_height || 121);
+    		}
+    	};
+
+    	return [
+    		id,
+    		width,
+    		height,
+    		checkSize,
+    		top,
+    		left,
+    		svgFile,
+    		viewBoxW,
+    		$sheets,
+    		viewBoxH,
+    		$panels,
+    		scale,
+    		showSizes,
+    		hideSizes,
+    		div_binding
+    	];
+    }
+
+    class Viewer extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Viewer",
+    			options,
+    			id: create_fragment$1.name
+    		});
+    	}
+    }
+
+    /* src/components/Info.svelte generated by Svelte v3.24.1 */
+    const file$2 = "src/components/Info.svelte";
+
+    function get_each_context$1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[2] = list[i];
+    	return child_ctx;
+    }
+
+    function get_each_context_1$1(ctx, list, i) {
+    	const child_ctx = ctx.slice();
+    	child_ctx[5] = list[i];
+    	child_ctx[7] = i;
+    	return child_ctx;
+    }
+
+    // (14:4) {#if $fileInfo.name}
+    function create_if_block_1$1(ctx) {
+    	let h2;
+    	let t0_value = /*$fileInfo*/ ctx[0].name + "";
+    	let t0;
+    	let t1;
+    	let if_block_anchor;
+    	let if_block = /*$sheets*/ ctx[1].length > 1 && create_if_block_2(ctx);
+
+    	const block = {
+    		c: function create() {
+    			h2 = element("h2");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			if (if_block) if_block.c();
+    			if_block_anchor = empty();
+    			add_location(h2, file$2, 14, 8, 212);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, h2, anchor);
+    			append_dev(h2, t0);
+    			insert_dev(target, t1, anchor);
+    			if (if_block) if_block.m(target, anchor);
+    			insert_dev(target, if_block_anchor, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*$fileInfo*/ 1 && t0_value !== (t0_value = /*$fileInfo*/ ctx[0].name + "")) set_data_dev(t0, t0_value);
+
+    			if (/*$sheets*/ ctx[1].length > 1) {
+    				if (if_block) {
+    					if_block.p(ctx, dirty);
+    				} else {
+    					if_block = create_if_block_2(ctx);
+    					if_block.c();
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
+    				}
+    			} else if (if_block) {
+    				if_block.d(1);
+    				if_block = null;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(h2);
+    			if (detaching) detach_dev(t1);
+    			if (if_block) if_block.d(detaching);
+    			if (detaching) detach_dev(if_block_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1$1.name,
+    		type: "if",
+    		source: "(14:4) {#if $fileInfo.name}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (16:8) {#if $sheets.length > 1}
+    function create_if_block_2(ctx) {
+    	let p0;
+    	let t1;
+    	let p1;
+    	let t2;
+    	let t3_value = parseInt(/*$sheets*/ ctx[1].slice(0, -1).reduce(func, 0)) + "";
+    	let t3;
+    	let t4;
+
+    	const block = {
+    		c: function create() {
+    			p0 = element("p");
+    			p0.textContent = "filled sheets";
+    			t1 = space();
+    			p1 = element("p");
+    			t2 = text("waste: ");
+    			t3 = text(t3_value);
+    			t4 = text("%");
+    			add_location(p0, file$2, 16, 12, 283);
+    			add_location(p1, file$2, 17, 12, 316);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p0, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, p1, anchor);
+    			append_dev(p1, t2);
+    			append_dev(p1, t3);
+    			append_dev(p1, t4);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*$sheets*/ 2 && t3_value !== (t3_value = parseInt(/*$sheets*/ ctx[1].slice(0, -1).reduce(func, 0)) + "")) set_data_dev(t3, t3_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p0);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(p1);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2.name,
+    		type: "if",
+    		source: "(16:8) {#if $sheets.length > 1}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (27:0) {#each $sheets as sheet, index}
+    function create_each_block_1$1(ctx) {
+    	let div;
+    	let h4;
+    	let t0_value = /*sheet*/ ctx[5].id + "";
+    	let t0;
+    	let t1;
+    	let p0;
+    	let t2;
+    	let t3_value = parseInt(/*sheet*/ ctx[5].area) + "";
+    	let t3;
+    	let t4;
+    	let p1;
+    	let t5;
+    	let t6_value = parseInt(/*sheet*/ ctx[5].waste_area) + "";
+    	let t6;
+    	let t7;
+    	let p2;
+    	let t8;
+    	let t9_value = parseInt(/*sheet*/ ctx[5].waste_ratio * 100) + "";
+    	let t9;
+    	let t10;
+
+    	const block = {
+    		c: function create() {
+    			div = element("div");
+    			h4 = element("h4");
+    			t0 = text(t0_value);
+    			t1 = space();
+    			p0 = element("p");
+    			t2 = text("used area: ");
+    			t3 = text(t3_value);
+    			t4 = space();
+    			p1 = element("p");
+    			t5 = text("waste area: ");
+    			t6 = text(t6_value);
+    			t7 = space();
+    			p2 = element("p");
+    			t8 = text("waste: ");
+    			t9 = text(t9_value);
+    			t10 = text("%");
+    			add_location(h4, file$2, 28, 8, 604);
+    			add_location(p0, file$2, 29, 8, 632);
+    			add_location(p1, file$2, 30, 8, 681);
+    			add_location(p2, file$2, 31, 8, 737);
+    			attr_dev(div, "class", "svelte-sf2keo");
+    			add_location(div, file$2, 27, 4, 590);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div, anchor);
+    			append_dev(div, h4);
+    			append_dev(h4, t0);
+    			append_dev(div, t1);
+    			append_dev(div, p0);
+    			append_dev(p0, t2);
+    			append_dev(p0, t3);
+    			append_dev(div, t4);
+    			append_dev(div, p1);
+    			append_dev(p1, t5);
+    			append_dev(p1, t6);
+    			append_dev(div, t7);
+    			append_dev(div, p2);
+    			append_dev(p2, t8);
+    			append_dev(p2, t9);
+    			append_dev(p2, t10);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*$sheets*/ 2 && t0_value !== (t0_value = /*sheet*/ ctx[5].id + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*$sheets*/ 2 && t3_value !== (t3_value = parseInt(/*sheet*/ ctx[5].area) + "")) set_data_dev(t3, t3_value);
+    			if (dirty & /*$sheets*/ 2 && t6_value !== (t6_value = parseInt(/*sheet*/ ctx[5].waste_area) + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*$sheets*/ 2 && t9_value !== (t9_value = parseInt(/*sheet*/ ctx[5].waste_ratio * 100) + "")) set_data_dev(t9, t9_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block_1$1.name,
+    		type: "each",
+    		source: "(27:0) {#each $sheets as sheet, index}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (37:4) {#if $fileInfo.errors.length}
+    function create_if_block$2(ctx) {
+    	let h5;
+    	let t0;
+    	let t1_value = (/*$fileInfo*/ ctx[0].errors.length > 1 ? "S" : "") + "";
+    	let t1;
+    	let t2;
+    	let t3;
+    	let each_1_anchor;
+    	let each_value = /*$fileInfo*/ ctx[0].errors;
+    	validate_each_argument(each_value);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value.length; i += 1) {
+    		each_blocks[i] = create_each_block$1(get_each_context$1(ctx, each_value, i));
+    	}
+
+    	const block = {
+    		c: function create() {
+    			h5 = element("h5");
+    			t0 = text("ERROR");
+    			t1 = text(t1_value);
+    			t2 = text(":");
+    			t3 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			each_1_anchor = empty();
+    			add_location(h5, file$2, 37, 8, 856);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, h5, anchor);
+    			append_dev(h5, t0);
+    			append_dev(h5, t1);
+    			append_dev(h5, t2);
+    			insert_dev(target, t3, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, each_1_anchor, anchor);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*$fileInfo*/ 1 && t1_value !== (t1_value = (/*$fileInfo*/ ctx[0].errors.length > 1 ? "S" : "") + "")) set_data_dev(t1, t1_value);
+
+    			if (dirty & /*$fileInfo*/ 1) {
+    				each_value = /*$fileInfo*/ ctx[0].errors;
+    				validate_each_argument(each_value);
+    				let i;
+
+    				for (i = 0; i < each_value.length; i += 1) {
+    					const child_ctx = get_each_context$1(ctx, each_value, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block$1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value.length;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(h5);
+    			if (detaching) detach_dev(t3);
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(each_1_anchor);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$2.name,
+    		type: "if",
+    		source: "(37:4) {#if $fileInfo.errors.length}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (39:8) {#each $fileInfo.errors as error}
+    function create_each_block$1(ctx) {
+    	let p;
+    	let t_value = /*error*/ ctx[2] + "";
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			p = element("p");
+    			t = text(t_value);
+    			add_location(p, file$2, 39, 12, 966);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, p, anchor);
+    			append_dev(p, t);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*$fileInfo*/ 1 && t_value !== (t_value = /*error*/ ctx[2] + "")) set_data_dev(t, t_value);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(p);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_each_block$1.name,
+    		type: "each",
+    		source: "(39:8) {#each $fileInfo.errors as error}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$2(ctx) {
+    	let div0;
+    	let t0;
+    	let t1;
+    	let div1;
+    	let if_block0 = /*$fileInfo*/ ctx[0].name && create_if_block_1$1(ctx);
+    	let each_value_1 = /*$sheets*/ ctx[1];
+    	validate_each_argument(each_value_1);
+    	let each_blocks = [];
+
+    	for (let i = 0; i < each_value_1.length; i += 1) {
+    		each_blocks[i] = create_each_block_1$1(get_each_context_1$1(ctx, each_value_1, i));
+    	}
+
+    	let if_block1 = /*$fileInfo*/ ctx[0].errors.length && create_if_block$2(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div0 = element("div");
+    			if (if_block0) if_block0.c();
+    			t0 = space();
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].c();
+    			}
+
+    			t1 = space();
+    			div1 = element("div");
+    			if (if_block1) if_block1.c();
+    			attr_dev(div0, "class", "svelte-sf2keo");
+    			add_location(div0, file$2, 12, 0, 173);
+    			attr_dev(div1, "class", "svelte-sf2keo");
+    			add_location(div1, file$2, 35, 0, 808);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div0, anchor);
+    			if (if_block0) if_block0.m(div0, null);
+    			insert_dev(target, t0, anchor);
+
+    			for (let i = 0; i < each_blocks.length; i += 1) {
+    				each_blocks[i].m(target, anchor);
+    			}
+
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div1, anchor);
+    			if (if_block1) if_block1.m(div1, null);
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (/*$fileInfo*/ ctx[0].name) {
+    				if (if_block0) {
+    					if_block0.p(ctx, dirty);
+    				} else {
+    					if_block0 = create_if_block_1$1(ctx);
+    					if_block0.c();
+    					if_block0.m(div0, null);
+    				}
+    			} else if (if_block0) {
+    				if_block0.d(1);
+    				if_block0 = null;
+    			}
+
+    			if (dirty & /*parseInt, $sheets*/ 2) {
+    				each_value_1 = /*$sheets*/ ctx[1];
+    				validate_each_argument(each_value_1);
+    				let i;
+
+    				for (i = 0; i < each_value_1.length; i += 1) {
+    					const child_ctx = get_each_context_1$1(ctx, each_value_1, i);
+
+    					if (each_blocks[i]) {
+    						each_blocks[i].p(child_ctx, dirty);
+    					} else {
+    						each_blocks[i] = create_each_block_1$1(child_ctx);
+    						each_blocks[i].c();
+    						each_blocks[i].m(t1.parentNode, t1);
+    					}
+    				}
+
+    				for (; i < each_blocks.length; i += 1) {
+    					each_blocks[i].d(1);
+    				}
+
+    				each_blocks.length = each_value_1.length;
+    			}
+
+    			if (/*$fileInfo*/ ctx[0].errors.length) {
+    				if (if_block1) {
+    					if_block1.p(ctx, dirty);
+    				} else {
+    					if_block1 = create_if_block$2(ctx);
+    					if_block1.c();
+    					if_block1.m(div1, null);
+    				}
+    			} else if (if_block1) {
+    				if_block1.d(1);
+    				if_block1 = null;
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div0);
+    			if (if_block0) if_block0.d();
+    			if (detaching) detach_dev(t0);
+    			destroy_each(each_blocks, detaching);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div1);
+    			if (if_block1) if_block1.d();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$2.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    const func = (total, waste, i, array) => total + waste.waste_ratio * 100 / array.length;
+
+    function instance$2($$self, $$props, $$invalidate) {
+    	let $fileInfo;
+    	let $sheets;
+    	validate_store(fileInfo, "fileInfo");
+    	component_subscribe($$self, fileInfo, $$value => $$invalidate(0, $fileInfo = $$value));
+    	validate_store(sheets, "sheets");
+    	component_subscribe($$self, sheets, $$value => $$invalidate(1, $sheets = $$value));
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Info> was created with unknown prop '${key}'`);
+    	});
+
+    	let { $$slots = {}, $$scope } = $$props;
+    	validate_slots("Info", $$slots, []);
+    	$$self.$capture_state = () => ({ sheets, fileInfo, $fileInfo, $sheets });
+    	return [$fileInfo, $sheets];
+    }
+
+    class Info extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "Info",
+    			options,
+    			id: create_fragment$2.name
+    		});
+    	}
+    }
+
+    /* src/App.svelte generated by Svelte v3.24.1 */
+    const file$3 = "src/App.svelte";
+
+    // (37:2) {#if $sheets.length}
+    function create_if_block$3(ctx) {
+    	let viewer;
+    	let t;
+    	let div;
+    	let info;
+    	let current;
+    	viewer = new Viewer({ $$inline: true });
+    	info = new Info({ $$inline: true });
+
+    	const block = {
+    		c: function create() {
+    			create_component(viewer.$$.fragment);
+    			t = space();
+    			div = element("div");
+    			create_component(info.$$.fragment);
+    			attr_dev(div, "class", "info svelte-j2egch");
+    			add_location(div, file$3, 42, 2, 804);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(viewer, target, anchor);
+    			insert_dev(target, t, anchor);
+    			insert_dev(target, div, anchor);
+    			mount_component(info, div, null);
+    			current = true;
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(viewer.$$.fragment, local);
+    			transition_in(info.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(viewer.$$.fragment, local);
+    			transition_out(info.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(viewer, detaching);
+    			if (detaching) detach_dev(t);
+    			if (detaching) detach_dev(div);
+    			destroy_component(info);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block$3.name,
+    		type: "if",
+    		source: "(37:2) {#if $sheets.length}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment$3(ctx) {
+    	let div1;
+    	let div0;
+    	let import_1;
+    	let t;
+    	let current;
+    	import_1 = new Import({ $$inline: true });
+    	let if_block = /*$sheets*/ ctx[0].length && create_if_block$3(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div1 = element("div");
+    			div0 = element("div");
+    			create_component(import_1.$$.fragment);
+    			t = space();
+    			if (if_block) if_block.c();
+    			attr_dev(div0, "class", "import svelte-j2egch");
+    			add_location(div0, file$3, 27, 2, 570);
+    			attr_dev(div1, "class", "container svelte-j2egch");
+    			add_location(div1, file$3, 26, 0, 544);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, div0);
+    			mount_component(import_1, div0, null);
+    			append_dev(div1, t);
+    			if (if_block) if_block.m(div1, null);
+    			current = true;
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (/*$sheets*/ ctx[0].length) {
+    				if (if_block) {
+    					if (dirty & /*$sheets*/ 1) {
+    						transition_in(if_block, 1);
+    					}
+    				} else {
+    					if_block = create_if_block$3(ctx);
+    					if_block.c();
+    					transition_in(if_block, 1);
+    					if_block.m(div1, null);
+    				}
+    			} else if (if_block) {
+    				group_outros();
+
+    				transition_out(if_block, 1, 1, () => {
+    					if_block = null;
+    				});
+
+    				check_outros();
+    			}
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(import_1.$$.fragment, local);
+    			transition_in(if_block);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(import_1.$$.fragment, local);
+    			transition_out(if_block);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div1);
+    			destroy_component(import_1);
+    			if (if_block) if_block.d();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment$3.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance$3($$self, $$props, $$invalidate) {
+    	let $sheets;
+    	validate_store(sheets, "sheets");
+    	component_subscribe($$self, sheets, $$value => $$invalidate(0, $sheets = $$value));
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<App> was created with unknown prop '${key}'`);
+    	});
+
+    	let { $$slots = {}, $$scope } = $$props;
+    	validate_slots("App", $$slots, []);
+    	$$self.$capture_state = () => ({ Import, Viewer, Info, sheets, $sheets });
+    	return [$sheets];
+    }
+
+    class App extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance$3, create_fragment$3, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "App",
+    			options,
+    			id: create_fragment$3.name
+    		});
+    	}
+    }
+
+    const app = new App({
+      target: document.body
+    });
+
+    return app;
+
+}());
 //# sourceMappingURL=bundle.js.map
