@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:ital,wght@0,100;0,300;0,600;0,800;1,100;1,300;1,600;1,800&display=swap');
+/* RESETS */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+html {
+  font: 62.5% sans-serif;
+}
+body {
+  font: var(--medium) 'Quicksand', helvetica, sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.1rem;
+  background-color: var(--primary-bg);
+  color: var(--primary);
+}
+/* VARIABLES */
+:root {
+  --purple: #6453ff;
+  --blue: #53acff;
+  --darkblue: #2d5b87;
+  --green: #98ffc6;
+  --yellow: #c5beaa;
+  --orange: #ffbd9a;
+  --red: #ff827e;
+  --darkred: #ac5552;
+  --darkgray: #383838;
+  --lightgray: #e4e3e2;
+  --half: 0.5rem;
+  --quarter: 0.25rem;
+  --xsmall: 0.9rem;
+  --small: 1.1rem;
+  --medium: 1.25rem;
+  --large: 1.5rem;
+  --xlarge: 2rem;
+  --xxlarge: 2.5rem;
+}
+@media screen and (prefers-color-scheme: light) {
+  :root {
+    --primary: var(--darkgray);
+    --primary-bg: var(--lightgray);
+    --second: var(--darkblue);
+    --second-bg: var(--blue);
+    --third: var(--darkred);
+    --third-bg: var(--red);
+  }
+}
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --primary: var(--lightgray);
+    --primary-bg: var(--darkgray);
+    --second: var(--blue);
+    --second-bg: var(--darkblue);
+    --third: var(--red);
+    --third-bg: var(--darkred);
+  }
+}
+@media screen and (min-width: 620px) {
+  body {
+    font-size: var(--large);
+    line-height: var(--xxlarge);
+    transition: 0.2s;
+  }
+}
+/* GLOBAL STYLES */
+select,
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+input:hover {
+  /* font-size: 1.3em; */
+  color: var(--primary-bg);
+  background-color: var(--second);
+  border-radius: var(--half);
+  transition: 0.2s;
+}
+input:focus {
+  /* color: var(--red); */
+  /* text-decoration: underline; */
+  /* text-emphasis: var(--second); */
+  /* background-color: var(--second); */
+  border: 1px solid var(--primary);
+  border-radius: var(--half);
+  font-weight: 800;
+  transition: 0.2s;
+}
+
+input:hover::selection {
+  color: var(--primary);
+  /* background-color: var(--second); */
+  transition: 0.2s;
+}
+
+input::selection {
+  color: var(--third);
+
+  transition: 0.2s;
+}
+
+input {
+  text-align: center;
+  border: none;
+  background: none;
+  font-family: Overpass;
+  font-weight: 300;
+  color: var(--primary);
+  outline: none;
+  transition: 0.2s;
+}
+*[data-lang*='fr'] > span {
+  display: none;
+}
+*[data-lang*='fr']::after {
+  content: attr(data-fr);
+}
