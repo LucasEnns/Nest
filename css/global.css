@@ -78,8 +78,6 @@ input[type='number'] {
 }
 input:hover {
   /* font-size: 1.3em; */
-  color: var(--primary-bg);
-  background-color: var(--second);
   border-radius: var(--half);
   transition: 0.2s;
 }
@@ -108,7 +106,7 @@ input::selection {
 
 input {
   text-align: center;
-  border: none;
+  border: 1px solid transparent;
   background: none;
   font-family: Overpass;
   font-weight: 300;
