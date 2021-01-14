@@ -94,7 +94,6 @@ input:focus {
 
 input:hover::selection {
   color: var(--primary);
-  /* background-color: var(--second); */
   transition: 0.2s;
 }
 
@@ -117,6 +116,6 @@ input {
 *[data-lang*='fr'] > span {
   display: none;
 }
-*[data-lang*='fr']::before {
+*[data-lang*='fr']::after {
   content: attr(data-fr);
 }

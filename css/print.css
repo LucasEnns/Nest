@@ -1,7 +1,4 @@
 @media print {
-  /* *:not(.print) {
-        display: none;
-    } */
   .import,
   .wrapper,
   .settings,
@@ -11,13 +8,11 @@
   .print {
     display: block !important;
     fill: none;
-    /* stroke-width: 3px; */
     stroke: black;
   }
   text.print {
     display: block !important;
     fill: black !important;
-    /* stroke-width: 3px; */
     stroke: black;
   }
 }
