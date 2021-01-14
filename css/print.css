@@ -1,20 +1,23 @@
-@media print{
-    /* *:not(.print) {
+@media print {
+  /* *:not(.print) {
         display: none;
     } */
-    .import, .wrapper {
-        display: none !important;
-    }
-    .print  {
-        display: block !important;
-        fill: none;
-        /* stroke-width: 3px; */
-        stroke: black;
-    }
-    text.print  {
-        display: block !important;
-        fill: black !important;
-        /* stroke-width: 3px; */
-        stroke: black;
-    }
+  .import,
+  .wrapper,
+  .settings,
+  .splash {
+    display: none !important;
   }
+  .print {
+    display: block !important;
+    fill: none;
+    /* stroke-width: 3px; */
+    stroke: black;
+  }
+  text.print {
+    display: block !important;
+    fill: black !important;
+    /* stroke-width: 3px; */
+    stroke: black;
+  }
+}

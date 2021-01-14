@@ -117,6 +117,6 @@ input {
 *[data-lang*='fr'] > span {
   display: none;
 }
-*[data-lang*='fr']::after {
+*[data-lang*='fr']::before {
   content: attr(data-fr);
 }
