@@ -86,16 +86,16 @@ input:focus {
   /* text-decoration: underline; */
   /* text-emphasis: var(--second); */
   /* background-color: var(--second); */
-  border: 1px solid var(--primary);
-  border-radius: var(--half);
+  /* border: 1px solid var(--primary);
+  border-radius: var(--half); */
   font-weight: 800;
   transition: 0.2s;
 }
 
-input:hover::selection {
-  color: var(--primary);
+/* input:hover::selection {
+  color: var(--third);
   transition: 0.2s;
-}
+} */
 
 input::selection {
   color: var(--third);
